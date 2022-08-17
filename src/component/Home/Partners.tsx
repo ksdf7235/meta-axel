@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { TitleH1 } from "../Common/Title";
-import { DesContentLayout, DesLayout } from "../Common/Layout";
+import { CommonContentLayout, CommonLayout } from "../Common/Layout";
 import { Bzpartner, Devpartner } from "../../Data/PartnersData";
 import PartnerPlate from "./Partners/PartnersPlate";
 import { DesContent } from "../Common/Elements";
@@ -9,7 +9,7 @@ import media from "../../lib/media";
 function Partners() {
   return (
     <>
-      <DesContentLayout id='Team'>
+      <CommonContentLayout id='Team'>
         <PartnerContent>
           <PartnerTitle>Business Team</PartnerTitle>
           <PartnerGrid>
@@ -23,8 +23,8 @@ function Partners() {
             ))}
           </PartnerGrid>
         </PartnerContent>
-      </DesContentLayout>
-      <DesLayout>
+      </CommonContentLayout>
+      <CommonLayout>
         <PartnerContent>
           <PartnerTitle>Development Team</PartnerTitle>
           <PartnerGrid>
@@ -38,7 +38,7 @@ function Partners() {
             ))}
           </PartnerGrid>
         </PartnerContent>
-      </DesLayout>
+      </CommonLayout>
     </>
   );
 }

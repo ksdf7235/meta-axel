@@ -1,0 +1,8 @@
+{
+  "hosting": {
+    "cleanUrls": true,
+    "public": "build",
+    "target": "nxdfio",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  }
+}

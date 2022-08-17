@@ -23,12 +23,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   );
 };
 
-export const DesLayout = styled.div`
+export const CommonLayout = styled.div`
   width: 100%;
   background: ${(props) => props.theme.bgColor};
 `;
 
-export const DesContentLayout = styled.div`
+export const CommonContentLayout = styled.div`
   width: 100%;
   background: ${(props) => props.theme.bgDarkColor};
 `;

@@ -45,12 +45,10 @@ const MainBtn = styled.div<{ img?: string }>`
   background-position: center;
   color: white;
 `;
-const MainLay = styled.div`
-  height: 100vh;
-`;
+
 const MainMedia = styled.div`
   margin-top: 15rem;
-  width: 50%;
+  width: 60%;
   height: auto;
   min-height: 600px;
   background-image: url("image/main/main_cha_01.png"),
@@ -64,6 +62,7 @@ const MainLayout = styled.div`
   background-image: url("image/main/main_bg.png");
   width: 100%;
   display: flex;
+  background-repeat: no-repeat;
   flex-direction: column;
   align-items: center;
   justify-content: center;

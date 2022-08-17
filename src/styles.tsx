@@ -24,9 +24,9 @@ export const darkTheme: DefaultTheme = {
   CardColor: "#12123B",
   //essential
   fontColor: "white",
-  bgColor: "#03032f",
+  bgColor: "#000000",
   bgDarkColor: "rgba(0, 0, 0, 0.3)",
-  headerColor: "rgb(255, 255, 255, 0.7)",
+  headerColor: "#000000",
   btnColor: "#00fefe",
   //width
   maxWidth: "1200px",
