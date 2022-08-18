@@ -20,6 +20,7 @@ const SHeader = styled.header`
 `;
 
 const HeaderLayout = styled.div`
+  z-index: 100;
   width: 50%;
   height: 80px;
   border: 1px solid red;
