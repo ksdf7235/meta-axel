@@ -44,7 +44,7 @@ export const GlobalStyles = createGlobalStyle`
     body {
         background-color:${(props) => props.theme.bgColor};
         font-size:18px;
-        font-family:'Gotham', sans-serif;
+        font-family:'Aware', sans-serif;
         color:${(props) => props.theme.fontColor};
     }
     a {

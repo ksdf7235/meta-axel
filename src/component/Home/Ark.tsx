@@ -3,46 +3,69 @@ import { useRecoilState } from "recoil";
 import { selectLang } from "../../lib/selectLang";
 import media from "../../lib/media";
 import { CommonLayout } from "../Common/Layout";
-
 import Slider from "react-slick";
+import { ArkData } from "../../Data/dummy";
+import { LittleSpan, TitleH1 } from "../Common/Title";
 
 const Ark: React.FC = () => {
   const settings = {
+    className: "center",
+    centerMode: true,
     infinite: true,
+    centerPadding: "20%",
+    slidesToShow: 1,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    prevArrow: <LeftArrow />,
+    nextArrow: <RightArrow />,
   };
   return (
     <ArkLayout>
       <ArkContainer>
-        <h1>META AXEL ARK</h1>
-        <span>메타엑셀 nft홀더 전용 프라이빗 라운지</span>
+        <TitleH1>META AXEL ARK</TitleH1>
+        <LittleSpan>메타엑셀 nft홀더 전용 프라이빗 라운지</LittleSpan>
       </ArkContainer>
       <ArkSlideLayout>
         <SlideLayout>
-          <Slider {...settings}>
-            <Box>
-              <h3>1</h3>
-            </Box>
-            <Box>
-              <h3>2</h3>
-            </Box>
-            <Box>
-              <h3>3</h3>
-            </Box>
-            <Box>
-              <h3>4</h3>
-            </Box>
-          </Slider>
+          <ArkSlider {...settings}>
+            {ArkData.map(({ img }, i) => (
+              <Box img={img}></Box>
+            ))}
+          </ArkSlider>
         </SlideLayout>
       </ArkSlideLayout>
     </ArkLayout>
   );
 };
 
+const ArkSlider = styled(Slider)`
+  .slick-center {
+    width: 60vw !important;
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 0px;
+  }
+  .slick-prev {
+    position: absolute;
+    top: 30vh;
+    left: 15%;
+  }
+  .slick-next {
+    position: absolute;
+    top: 30vh;
+    right: 15%;
+  }
+`;
+
 const ArkContainer = styled.div`
   margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const ArkSlideLayout = styled.div`
@@ -58,12 +81,18 @@ const SlideLayout = styled.div`
   flex-direction: column;
 `;
 
-const Box = styled.div`
+const Box = styled.div<{ img?: string }>`
   background-color: white;
   color: black;
   width: 200px;
-  height: 300px;
+  min-height: 600px;
   font-size: 66px;
+  background-image: ${(props) => `url(${props.img})`};
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: fill;
+  object-fit: contain;
+  border: 10px solid black;
 `;
 const ArkLayout = styled(CommonLayout)`
   margin-top: 5rem;
@@ -71,5 +100,26 @@ const ArkLayout = styled(CommonLayout)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`;
+
+const LeftArrow = styled.div`
+  z-index: 100;
+  background: no-repeat url("/image/common/slider_arrow_left.png");
+  background-size: contain;
+  width: 50px;
+  height: 60px;
+
+  :hover {
+    background: no-repeat url("/image/common/slider_arrow_left.png");
+  }
+`;
+const RightArrow = styled(LeftArrow)`
+  position: absolute;
+  top: 30vh;
+  right: 10%;
+  background: no-repeat url("/image/common/slider_arrow_right.png");
+  :hover {
+    background: no-repeat url("/image/common/slider_arrow_right.png");
+  }
 `;
 export default Ark;

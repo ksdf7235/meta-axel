@@ -1,17 +1,19 @@
 import styled from "styled-components";
 import media from "../../lib/media";
 
-export const DesH1 = styled.h1`
-  font-size: 38px;
+export const CommonH1 = styled.h1`
+  font-size: 30px;
   font-weight: bold;
-  margin-bottom: 26px;
+  margin-bottom: 1rem;
   display: inline-block;
   width: 100%;
   min-width: 300px;
+  text-align: center;
 `;
 
-export const Despan = styled.span`
+export const CommonSpan = styled.span`
   display: inline-block;
+  text-align: center;
   width: 100%;
   font-weight: 500;
   margin-bottom: 36px;
@@ -22,7 +24,7 @@ export const Despan = styled.span`
   }
 `;
 
-export const CommonDesDiv = styled.div`
+export const CommonDiv = styled.div`
   z-index: 10;
   width: 50%;
   max-width: ${(props) => props.theme.maxContentWidth};
@@ -32,7 +34,7 @@ export const CommonDesDiv = styled.div`
   }
 `;
 
-export const DesContent = styled.div`
+export const CommonContentDiv = styled.div`
   width: 62.5%;
   display: flex;
   align-items: center;

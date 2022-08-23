@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import { CompanyLayout } from "../Common/Layout";
+import { CommonLayout, CompanyLayout } from "../Common/Layout";
 import { TitleH1 } from "../Common/Title";
 import { Companies } from "../../Data/CompanyData";
-import { DesContent } from "../Common/Elements";
+import { CommonContentDiv } from "../Common/Elements";
 import media from "../../lib/media";
 
 const Company: React.FC = () => {
   return (
-    <CompanyLayout>
+    <CommonLayout>
       <CompanyContentLayout>
         <CompanyTitle>Partners</CompanyTitle>
         <CompanyGrid>
@@ -16,16 +16,16 @@ const Company: React.FC = () => {
           ))}
         </CompanyGrid>
       </CompanyContentLayout>
-    </CompanyLayout>
+    </CommonLayout>
   );
 };
 
 const CompanyTitle = styled(TitleH1)`
-  color: black;
   margin-bottom: 3rem;
+  text-align: center;
 `;
 
-const CompanyContentLayout = styled(DesContent)`
+const CompanyContentLayout = styled(CommonContentDiv)`
   flex-direction: column;
   padding: 5rem 0px;
   ${media.small} {
@@ -36,7 +36,7 @@ const CompanyContentLayout = styled(DesContent)`
 const CompanyGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  width: 100%;
+  width: 80%;
   height: 100%;
   justify-content: space-between;
   gap: 1rem 2rem;
@@ -52,7 +52,9 @@ const CompanyImg = styled.div<{ img?: string }>`
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  min-height: 100px;
+  min-height: 60px;
+  background-color: white;
+  border-radius: 20px;
 
   ${media.small} {
     width: auto;

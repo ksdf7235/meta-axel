@@ -3,6 +3,7 @@ import { useRecoilState } from "recoil";
 import media from "../../lib/media";
 import { CommonLayout } from "../Common/Layout";
 import Slider from "react-slick";
+import { CharacterData } from "../../Data/dummy";
 
 const Character: React.FC = () => {
   const settings = {
@@ -12,14 +13,34 @@ const Character: React.FC = () => {
     vertical: true,
     verticalSwiping: true,
     swipeToSlide: true,
+    speed: 1500,
+    autoplay: true,
+    autoplaySpeed: 1500,
+    cssEase: "linear",
+    prevArrow: <></>,
+    nextArrow: <></>,
+  };
+  const settings2 = {
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: -1,
+    vertical: true,
+    verticalSwiping: true,
+    swipeToSlide: true,
+    autoplay: true,
+    speed: 1500,
+    autoplaySpeed: 1500,
+    cssEase: "linear",
+    prevArrow: <></>,
+    nextArrow: <></>,
   };
   return (
     <ChaLayout>
       <ChaContainer>
         <ChaConLayout>
-          <h1>CHARACTER</h1>
+          <h2>CHARACTER</h2>
           <h1>NFTS</h1>
-          <h2>BURNT PINK SQUAD</h2>
+          <h3>BURNT PINK SQUAD</h3>
           <ul>
             <li>이름 : 메타엑셀 아이돌즈</li>
             <li>별명 : 불탄핑크스쿼드</li>
@@ -33,17 +54,13 @@ const Character: React.FC = () => {
         <ChaGradationLayout>
           <ChaSliderLayout>
             <ChaSlider {...settings}>
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <SilderProps key={i} id={`a${i}`}>
-                  <h3>{i}</h3>
-                </SilderProps>
+              {CharacterData.map(({ img }, i) => (
+                <SilderProps key={i} img={img}></SilderProps>
               ))}
             </ChaSlider>
-            <ChaSlider {...settings}>
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <SilderProps key={i}>
-                  <h3>{i}</h3>
-                </SilderProps>
+            <ChaSlider {...settings2}>
+              {CharacterData.map(({ img }, i) => (
+                <SilderProps key={i} img={img}></SilderProps>
               ))}
             </ChaSlider>
           </ChaSliderLayout>
@@ -61,10 +78,8 @@ const ChaSlider = styled(Slider)`
     font-size: 0px;
   }
   .slick-list {
-    margin: 0 auto;
   }
   .slick-slider {
-    background-color: rgba(248, 247, 216, 0.7);
   }
 `;
 
@@ -85,28 +100,53 @@ const ChaGradientup = styled.div`
   top: 0;
 `;
 
-const SilderProps = styled.div`
-  height: 33%;
-  width: 50%;
-  min-width: 10vw;
-  min-height: calc(65vh / 3);
+const SilderProps = styled.div<{ img?: string }>`
+  height: 30%;
+  width: 80% !important;
+  min-width: 80px;
+  min-height: 150px;
+  margin-bottom: 1rem;
   color: black;
-  background-color: white;
+  background-image: ${(props) => `url(${props.img})`};
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: contain;
 `;
 
 const ChaConLayout = styled.div`
   margin-right: 2rem;
+
+  h2 {
+    font-size: 40px;
+    font-weight: 700;
+  }
+  h1 {
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-bottom: 1rem;
+  }
+
+  li {
+    font-size: 14px;
+    color: gray;
+  }
 `;
 const ChaSliderLayout = styled.div`
-  width: 100%;
+  width: 80%;
   display: flex;
-  min-height: 600px;
+  min-height: 300px;
 `;
 
 const ChaGradationLayout = styled.div`
   width: 50%;
   display: flex;
-  min-height: 600px;
+  min-height: 300px;
   flex-direction: column;
   align-items: center;
   justify-content: center;

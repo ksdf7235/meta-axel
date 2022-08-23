@@ -4,6 +4,7 @@ import { selectLang } from "../../lib/selectLang";
 import { LangState } from "../../atoms";
 import media from "../../lib/media";
 import { CommonLayout } from "../Common/Layout";
+import { CommonH1 } from "../Common/Elements";
 
 const Description: React.FC = () => {
   return (
@@ -19,14 +20,35 @@ const Description: React.FC = () => {
       <ContentLayout img={"image/description/Des_img.png"}></ContentLayout>
       <NFTContentLayout img={"image/common/layout_red.png"}>
         <NFTLayout>
-          <span>메타엑셀은 NFT 아티스트를 지원합니다.</span>
-          <span>오늘 NFT 아티스트 길드의 일원이 되세요</span>
-          <div>JOIN IN</div>
+          <NftJoinTitle>
+            <CommonH1>메타엑셀은 NFT 아티스트를 지원합니다.</CommonH1>
+            <CommonH1>오늘 NFT 아티스트 길드의 일원이 되세요</CommonH1>
+          </NftJoinTitle>
+          <JoinBtn>JOIN IN</JoinBtn>
         </NFTLayout>
       </NFTContentLayout>
     </DesLayout>
   );
 };
+
+const NftJoinTitle = styled.div`
+  color: #c78e93;
+`;
+
+const JoinBtn = styled.div`
+  margin-top: 2rem;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url("image/common/btn_01.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+`;
 
 const DesLayout = styled(CommonLayout)`
   display: flex;
@@ -67,6 +89,7 @@ const ContentLayout = styled.div<{ img?: string }>`
 const NFTLayout = styled.div<{ img?: string }>`
   width: 60%;
   height: auto;
+  min-height: 250px;
   background-image: ${(props) => `url(${props.img})`};
   background-repeat: no-repeat;
   background-position: center;
