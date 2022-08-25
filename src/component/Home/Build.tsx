@@ -2,14 +2,18 @@ import styled from "styled-components";
 import { useRecoilState } from "recoil";
 import media from "../../lib/media";
 import { CommonLayout } from "../Common/Layout";
-import { BuildData } from "../../Data/dummy";
+import { BuildData, LandData } from "../../Data/dummy";
+import Slider from "react-slick";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 
 const Build: React.FC = () => {
-  const img = BuildData[0].img;
-  console.log(img);
   return (
     <BuildLayout>
-      <BuildContainer img={"image/build/build_img.png"}>
+      <BuildContainer
+        img={"image/build/build_img.png"}
+        smimg={"image/build/build_img_sm.png"}
+      >
         <BuildTitle>Building NFTs</BuildTitle>
         <BuildContent>
           <BuildContentDes>
@@ -34,10 +38,38 @@ const Build: React.FC = () => {
           </BuildContentImg>
         </BuildContent>
       </BuildContainer>
-      <BuildContainer img={"image/build/land_bg.png"}></BuildContainer>
     </BuildLayout>
   );
 };
+
+const Box = styled(motion.img)`
+  width: 300px;
+  object-fit: contain;
+  margin: 30px;
+  ${media.small} {
+    width: 100px;
+    min-height: 100px;
+  }
+`;
+
+const BuildContainer = styled.div<{ img?: string; smimg?: string }>`
+  width: ${(props) => props.theme.CommonContentWidth};
+  background-image: ${(props) => `url(${props.img})`};
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  ${media.small} {
+    width: 100%;
+    background-image: ${(props) => `url(${props.smimg})`};
+    background-size: 100% 95%;
+  }
+`;
 
 const BuildContentImgDiv = styled.div`
   display: flex;
@@ -48,6 +80,9 @@ const BuildContentImgDiv = styled.div`
   div:nth-child(1) {
     margin-right: 5px;
   }
+  ${media.small} {
+    min-width: 200px;
+  }
 `;
 
 const BuildArrowUp = styled.button`
@@ -55,6 +90,9 @@ const BuildArrowUp = styled.button`
   height: 30px;
   background: no-repeat url("/image/common/arrow_up.png");
   border: none;
+  ${media.small} {
+    display: none;
+  }
 `;
 const BuildArrowDown = styled(BuildArrowUp)`
   background: no-repeat url("/image/common/arrow_down.png");
@@ -75,26 +113,37 @@ const BuildContentDiv = styled.div`
   }
   span {
   }
+  ${media.small} {
+    margin: 3rem 0px;
+  }
 `;
 
 const BuildTitle = styled.div`
-  margin-top: 4rem;
   width: 90%;
   height: 10%;
   margin-left: 1rem;
-  min-height: 100px;
+  min-height: 50px;
+  margin-bottom: 2rem;
   font-weight: 700;
   font-size: 30px;
+  ${media.small} {
+    width: 100%;
+    background-size: cover;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
 `;
 const BuildContent = styled.div`
-  width: 60%;
+  width: 100%;
   height: 70%;
   min-height: 400px;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  position: relative;
+  ${media.small} {
+    flex-direction: column;
+  }
 `;
 
 const BuildContentImg = styled.div`
@@ -103,7 +152,11 @@ const BuildContentImg = styled.div`
   flex-direction: column;
   margin-left: 1rem;
   position: relative;
-  bottom: 5%;
+  bottom: 5vh;
+  ${media.small} {
+    width: 60%;
+    margin: 0px;
+  }
 `;
 
 const BuildImg = styled.div<{ img?: string }>`
@@ -115,6 +168,9 @@ const BuildImg = styled.div<{ img?: string }>`
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: contain;
+  ${media.small} {
+    min-height: 100px;
+  }
 `;
 
 const BuildImg2 = styled(BuildImg)`
@@ -123,6 +179,10 @@ const BuildImg2 = styled(BuildImg)`
   min-width: 400px;
   min-height: 200px;
   background-size: cover;
+  ${media.small} {
+    min-width: 200px;
+    min-height: 100px;
+  }
 `;
 
 const BuildContentDes = styled.div`
@@ -132,20 +192,12 @@ const BuildContentDes = styled.div`
   align-items: center;
   justify-content: space-between;
   text-align: left;
+
+  ${media.small} {
+    width: 60%;
+  }
 `;
 
-const BuildContainer = styled.div<{ img?: string }>`
-  width: 60%;
-  background-image: ${(props) => `url(${props.img})`};
-  min-height: 650px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-`;
 const BuildLayout = styled(CommonLayout)`
   margin-top: 5rem;
   display: flex;

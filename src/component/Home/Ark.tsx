@@ -52,11 +52,17 @@ const ArkSlider = styled(Slider)`
     position: absolute;
     top: 30vh;
     left: 15%;
+    ${media.small} {
+      display: none !important;
+    }
   }
   .slick-next {
     position: absolute;
     top: 30vh;
     right: 15%;
+    ${media.small} {
+      display: none !important;
+    }
   }
 `;
 
@@ -82,7 +88,6 @@ const SlideLayout = styled.div`
 `;
 
 const Box = styled.div<{ img?: string }>`
-  background-color: white;
   color: black;
   width: 200px;
   min-height: 600px;
@@ -108,6 +113,9 @@ const LeftArrow = styled.div`
   background-size: contain;
   width: 50px;
   height: 60px;
+  ${media.small} {
+    display: none;
+  }
 
   :hover {
     background: no-repeat url("/image/common/slider_arrow_left.png");

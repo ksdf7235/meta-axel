@@ -34,6 +34,10 @@ const HeaderLayout = styled.div`
   ${media.desktop} {
     justify-content: center;
   }
+  opacity: 0;
+  :hover {
+    opacity: 1;
+  }
 `;
 
 const Nav = styled.ul`

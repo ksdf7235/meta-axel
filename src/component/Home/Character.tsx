@@ -3,7 +3,7 @@ import { useRecoilState } from "recoil";
 import media from "../../lib/media";
 import { CommonLayout } from "../Common/Layout";
 import Slider from "react-slick";
-import { CharacterData } from "../../Data/dummy";
+import { CharacterData, CharacterData2 } from "../../Data/dummy";
 
 const Character: React.FC = () => {
   const settings = {
@@ -14,7 +14,7 @@ const Character: React.FC = () => {
     verticalSwiping: true,
     swipeToSlide: true,
     speed: 1500,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 1500,
     cssEase: "linear",
     prevArrow: <></>,
@@ -27,7 +27,7 @@ const Character: React.FC = () => {
     vertical: true,
     verticalSwiping: true,
     swipeToSlide: true,
-    autoplay: true,
+    autoplay: false,
     speed: 1500,
     autoplaySpeed: 1500,
     cssEase: "linear",
@@ -58,11 +58,11 @@ const Character: React.FC = () => {
                 <SilderProps key={i} img={img}></SilderProps>
               ))}
             </ChaSlider>
-            <ChaSlider {...settings2}>
-              {CharacterData.map(({ img }, i) => (
+            <ChaSlider2 {...settings2}>
+              {CharacterData2.map(({ img }, i) => (
                 <SilderProps key={i} img={img}></SilderProps>
               ))}
-            </ChaSlider>
+            </ChaSlider2>
           </ChaSliderLayout>
           <ChaGradientdown></ChaGradientdown>
           <ChaGradientup></ChaGradientup>
@@ -77,27 +77,48 @@ const ChaSlider = styled(Slider)`
   .slick-next:before {
     font-size: 0px;
   }
-  .slick-list {
+  .slick-list :nth-child(1) {
   }
   .slick-slider {
+  }
+
+  ${media.small} {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+  }
+`;
+const ChaSlider2 = styled(ChaSlider)`
+  ${media.small} {
+    margin-right: 0px;
+    margin-left: 0.5rem;
   }
 `;
 
 const ChaGradientdown = styled.div`
+  width: 100%;
   min-height: 100px;
   min-width: 100px;
   background: linear-gradient(to top, black, rgba(0, 0, 0, 0));
-  width: 100%;
   position: absolute;
   bottom: 0;
+
+  ${media.small} {
+    min-width: 300px;
+  }
 `;
 const ChaGradientup = styled.div`
+  width: 100%;
   min-height: 100px;
   min-width: 100px;
   background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0));
-  width: 100%;
   position: absolute;
   top: 0;
+  ${media.small} {
+    min-width: 300px;
+  }
 `;
 
 const SilderProps = styled.div<{ img?: string }>`
@@ -112,6 +133,10 @@ const SilderProps = styled.div<{ img?: string }>`
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: contain;
+  ${media.small} {
+    width: 100% !important;
+    min-height: 200px;
+  }
 `;
 
 const ChaConLayout = styled.div`
@@ -136,11 +161,20 @@ const ChaConLayout = styled.div`
     font-size: 14px;
     color: gray;
   }
+
+  ${media.small} {
+    order: 1;
+  }
 `;
 const ChaSliderLayout = styled.div`
   width: 80%;
   display: flex;
   min-height: 300px;
+  ${media.small} {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
 `;
 
 const ChaGradationLayout = styled.div`
@@ -151,6 +185,9 @@ const ChaGradationLayout = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+  ${media.small} {
+    width: 100%;
+  }
 `;
 
 const ChaContainer = styled.div<{ img?: string }>`
@@ -162,6 +199,12 @@ const ChaContainer = styled.div<{ img?: string }>`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+
+  ${media.small} {
+    //0825 수정해야댐
+    flex-direction: column;
+    width: auto;
+  }
 `;
 const ChaLayout = styled(CommonLayout)`
   margin-top: 5rem;

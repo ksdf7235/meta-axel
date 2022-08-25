@@ -15,6 +15,7 @@ export const lightTheme: DefaultTheme = {
   //width
   maxWidth: "1200px",
   maxContentWidth: "600px",
+  CommonContentWidth: "60%",
 };
 
 export const darkTheme: DefaultTheme = {
@@ -31,6 +32,7 @@ export const darkTheme: DefaultTheme = {
   //width
   maxWidth: "1200px",
   maxContentWidth: "600px",
+  CommonContentWidth: "60%",
 };
 
 export const GlobalStyles = createGlobalStyle`

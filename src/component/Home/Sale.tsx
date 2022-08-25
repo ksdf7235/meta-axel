@@ -3,7 +3,7 @@ import { useRecoilState } from "recoil";
 import media from "../../lib/media";
 import { CommonLayout } from "../Common/Layout";
 import Slider from "react-slick";
-import { CharacterData } from "../../Data/dummy";
+import { CharacterData, CharacterData2 } from "../../Data/dummy";
 
 const Sale: React.FC = () => {
   const settings = {
@@ -11,20 +11,31 @@ const Sale: React.FC = () => {
     speed: 500,
     slidesToShow: 6,
     slidesToScroll: 1,
+    prevArrow: <></>,
+    nextArrow: <></>,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          rows: 2,
+          slidesRows: 2,
+        },
+      },
+    ],
   };
   return (
     <SaleLayout>
       <SaleContainer>
-        <h1>the first nft sale 2022.08</h1>
-        <span>meta axel’s first collection : 10,000 nfts</span>
+        <h1>THE FISRT NFT SALE 2022.08</h1>
+        <span>META AXEL'S FIRST COLLECTION : 10,000 NFTS</span>
       </SaleContainer>
       <SaleSlideLayout>
         <SlideLayout>
           <SaleSlider {...settings}>
             {CharacterData.map(({ img }, i) => (
-              <Box key={i} img={img}>
-                <h3>{i}</h3>
-              </Box>
+              <Box key={i} img={img}></Box>
             ))}
           </SaleSlider>
           <SliderContent>
@@ -33,10 +44,8 @@ const Sale: React.FC = () => {
             </div>
           </SliderContent>
           <SaleSlider {...settings}>
-            {CharacterData.map(({ img }, i) => (
-              <Box key={i} img={img}>
-                <h3>{i}</h3>
-              </Box>
+            {CharacterData2.map(({ img }, i) => (
+              <Box key={i} img={img}></Box>
             ))}
           </SaleSlider>
           <Sliderbottom />
@@ -50,28 +59,39 @@ const SaleSlider = styled(Slider)``;
 
 const SaleContainer = styled.div`
   margin-bottom: 5rem;
+  text-align: center;
+  h1 {
+    font-size: 40px;
+    margin-bottom: 3rem;
+  }
+
+  span {
+    color: gray;
+  }
 `;
 const Sliderbottom = styled.div`
-  min-height: 300px;
+  min-height: 100%;
   min-width: 100px;
-  background: linear-gradient(to top, black, rgba(0, 0, 0, 0));
+  background: rgba(0, 0, 0, 0.4);
   width: 100%;
   position: absolute;
   bottom: 0;
 `;
 
 const SliderContent = styled.div`
-  min-height: 200px;
+  z-index: 100;
+  min-height: 120px;
   min-width: 100px;
-  background: black;
-  border-top: 5px solid green;
-  border-bottom: 5px solid green;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 4rem;
   font-weight: 700;
+  background-image: url("image/sale/sale_bg.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: fill;
 `;
 
 const SaleSlideLayout = styled.div`
@@ -94,11 +114,15 @@ const Box = styled.div<{ img?: string }>`
   background-repeat: no-repeat;
   background-size: contain;
   object-fit: contain;
-  background-color: white;
   color: black;
   width: 200px;
   height: 300px;
-  font-size: 66px;
+  ${media.small} {
+    background-size: cover;
+    object-fit: contain;
+    height: auto;
+    min-height: 200px;
+  }
 `;
 const SaleLayout = styled(CommonLayout)`
   margin-top: 5rem;

@@ -9,6 +9,12 @@ export const CommonH1 = styled.h1`
   width: 100%;
   min-width: 300px;
   text-align: center;
+  ${media.small} {
+    width: 60%;
+    margin: 0px auto;
+    background-position: top;
+    justify-content: center;
+  }
 `;
 
 export const CommonSpan = styled.span`

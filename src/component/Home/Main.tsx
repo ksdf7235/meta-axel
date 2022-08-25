@@ -28,6 +28,14 @@ const MainContent = styled.div`
   h1 {
     font-size: 60px;
     font-weight: bold;
+
+    ${media.small} {
+      display: none;
+    }
+  }
+
+  ${media.small} {
+    width: 100%;
   }
 `;
 
@@ -43,12 +51,16 @@ const MainBtn = styled.div<{ img?: string }>`
   background-image: ${(props) => `url(${props.img})`};
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
   color: white;
+  ${media.small} {
+    padding: 20px;
+  }
 `;
 
 const MainMedia = styled.div`
   margin-top: 15rem;
-  width: 60%;
+  width: ${(props) => props.theme.CommonContentWidth};
   height: auto;
   min-height: 600px;
   background-image: url("image/main/main_cha_01.png"),
@@ -56,6 +68,10 @@ const MainMedia = styled.div`
   background-size: contain, 400px 200px, 400px 200px;
   background-repeat: no-repeat;
   background-position: left, center 30%, right bottom;
+
+  ${media.small} {
+    width: 100%;
+  }
 `;
 
 const MainLayout = styled.div`

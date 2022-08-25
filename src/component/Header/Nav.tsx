@@ -55,6 +55,9 @@ const NAVContainer = styled.div`
   a {
     display: flex;
     text-align: center;
+    :hover {
+      color: white;
+    }
   }
 `;
 export default Navigation;

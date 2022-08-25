@@ -5,6 +5,7 @@ import Build from "../component/Home/Build";
 import Character from "../component/Home/Character";
 import Company from "../component/Home/Company";
 import Description from "../component/Home/Description";
+import Land from "../component/Home/Land";
 import Main from "../component/Home/Main";
 import Partners from "../component/Home/Partners";
 import RoadMap from "../component/Home/RoadMap";
@@ -17,6 +18,7 @@ function Home() {
       <Description />
       <Ark />
       <Build />
+      <Land />
       <Character />
       <Sale />
       <Partners />
