@@ -3,6 +3,7 @@ import { DarkThemeState } from "./atoms";
 import { darkTheme, lightTheme, GlobalStyles } from "./styles";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { useRecoilValue } from "recoil";
+import "./font/font.css";
 
 import routes from "./routes";
 import Layout from "./component/Common/Layout";

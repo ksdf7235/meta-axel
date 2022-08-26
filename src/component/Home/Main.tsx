@@ -5,14 +5,21 @@ import { LangState } from "../../atoms";
 import media from "../../lib/media";
 
 const Main: React.FC = () => {
+  const MintClick = () => {
+    alert("comming soon");
+  };
   return (
     <MainLayout id='Main'>
       <MainMedia></MainMedia>
       <MainContent>
         <h1>META AXEL PROJECT</h1>
         <MainBtnContainer>
-          <MainBtn img={"image/common/btn_green.png"}>White list</MainBtn>
-          <MainBtn img={"image/common/btn_pink.png"}>Mint NFT</MainBtn>
+          <MainBtn img={"image/common/btn_green.png"}>
+            <a href='https://form.jotform.com/222268943302050'>White list</a>
+          </MainBtn>
+          <MainBtn img={"image/common/btn_pink.png"}>
+            <a onClick={MintClick}>Mint NFT</a>
+          </MainBtn>
         </MainBtnContainer>
       </MainContent>
     </MainLayout>
@@ -53,6 +60,7 @@ const MainBtn = styled.div<{ img?: string }>`
   background-position: center;
   background-size: contain;
   color: white;
+  cursor: pointer;
   ${media.small} {
     padding: 20px;
   }

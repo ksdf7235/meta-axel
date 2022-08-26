@@ -21,15 +21,17 @@ function Navigation() {
   return (
     <NAVContainer>
       <a href='#'>
-        <Link to='Main' spy={true} smooth={true} offset={-80}>
+        <Link to='build' spy={true} smooth={true} offset={-80}>
           <li>{HeaderLang[0]}</li>
         </Link>
       </a>
       <a href='#'>
-        <li>{HeaderLang[1]}</li>
+        <Link to='land' spy={true} smooth={true} offset={-80}>
+          <li>{HeaderLang[1]}</li>
+        </Link>
       </a>
       <a href='#'>
-        <Link to='Team' spy={true} smooth={true} offset={-80}>
+        <Link to='chara' spy={true} smooth={true} offset={-80}>
           <li>{HeaderLang[2]}</li>
         </Link>
       </a>
@@ -37,13 +39,19 @@ function Navigation() {
         <li>{HeaderLang[3]}</li>
       </a>
       <a href='#'>
-        <li>{HeaderLang[4]}</li>
+        <Link to='team' spy={true} smooth={true} offset={-80}>
+          <li>{HeaderLang[4]}</li>
+        </Link>
       </a>
       <a href='#'>
-        <li>{HeaderLang[5]}</li>
+        <Link to='partners' spy={true} smooth={true} offset={-80}>
+          <li>{HeaderLang[5]}</li>
+        </Link>
       </a>
       <a onClick={Meta}>
-        <li>{HeaderLang[6]}</li>
+        <Link to='roadmap' spy={true} smooth={true} offset={-80}>
+          <li>{HeaderLang[6]}</li>
+        </Link>
       </a>
     </NAVContainer>
   );

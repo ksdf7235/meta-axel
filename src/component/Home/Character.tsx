@@ -14,7 +14,7 @@ const Character: React.FC = () => {
     verticalSwiping: true,
     swipeToSlide: true,
     speed: 1500,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 1500,
     cssEase: "linear",
     prevArrow: <></>,
@@ -27,7 +27,7 @@ const Character: React.FC = () => {
     vertical: true,
     verticalSwiping: true,
     swipeToSlide: true,
-    autoplay: false,
+    autoplay: true,
     speed: 1500,
     autoplaySpeed: 1500,
     cssEase: "linear",
@@ -35,7 +35,7 @@ const Character: React.FC = () => {
     nextArrow: <></>,
   };
   return (
-    <ChaLayout>
+    <ChaLayout id='chara'>
       <ChaContainer>
         <ChaConLayout>
           <h2>CHARACTER</h2>
@@ -79,11 +79,11 @@ const ChaSlider = styled(Slider)`
   }
   .slick-list :nth-child(1) {
   }
-  .slick-slider {
+  .slick-slide {
   }
 
   ${media.small} {
-    width: 100%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;

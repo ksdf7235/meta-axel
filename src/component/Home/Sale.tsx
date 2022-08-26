@@ -4,6 +4,7 @@ import media from "../../lib/media";
 import { CommonLayout } from "../Common/Layout";
 import Slider from "react-slick";
 import { CharacterData, CharacterData2 } from "../../Data/dummy";
+import Timer from "../Common/Timer";
 
 const Sale: React.FC = () => {
   const settings = {
@@ -39,9 +40,7 @@ const Sale: React.FC = () => {
             ))}
           </SaleSlider>
           <SliderContent>
-            <div>
-              <span>200 : 59 : 59</span>
-            </div>
+            <Timer />
           </SliderContent>
           <SaleSlider {...settings}>
             {CharacterData2.map(({ img }, i) => (

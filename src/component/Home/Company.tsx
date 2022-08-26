@@ -7,7 +7,7 @@ import media from "../../lib/media";
 
 const Company: React.FC = () => {
   return (
-    <CommonLayout>
+    <CommonLayout id='partners'>
       <CompanyContentLayout>
         <CompanyTitle>Partners</CompanyTitle>
         <CompanyGrid>

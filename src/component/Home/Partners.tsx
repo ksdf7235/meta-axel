@@ -9,7 +9,7 @@ import media from "../../lib/media";
 function Partners() {
   return (
     <>
-      <TeamLayout id='Team'>
+      <TeamLayout id='team'>
         <PartnerContent>
           <PartnerTitle>Team</PartnerTitle>
           <NxdfBanner></NxdfBanner>

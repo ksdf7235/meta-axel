@@ -27,7 +27,7 @@ const Land: React.FC = () => {
   const [click, setClick] = useState(1);
   const toggleClick = (id: any) => setClick(id);
   return (
-    <BuildLayout>
+    <BuildLayout id='land'>
       <LandContainer>
         <LandTitle>
           <h1>LAND NFTS</h1>
