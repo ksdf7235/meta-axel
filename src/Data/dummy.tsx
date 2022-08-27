@@ -141,3 +141,42 @@ export const LineData = [
     ],
   },
 ];
+
+export const RarityData = [
+  {
+    title: "Common",
+    content: ["No Rarity", "기본 아이템 장착"],
+    color: "rgba(255, 255, 255, 0.2) ",
+    lineColor: "rgba(255, 255, 255) ",
+  },
+  {
+    title: "Elite",
+    content: ["Rarity (50%)", "강화 아이템"],
+    color: "rgba(138, 178, 234, 0.2)",
+    lineColor: "rgba(138, 178, 234)",
+  },
+  {
+    title: "Rare",
+    content: ["Rarity (30%)", "레어 아이템"],
+    color: "rgba(244, 178, 119, 0.2)",
+    lineColor: "rgba(244, 178, 119)",
+  },
+  {
+    title: "Epic",
+    content: ["Rarity (18%)", "에픽 아이템"],
+    color: "rgba(123, 244, 76, 0.2)",
+    lineColor: "rgba(123, 244, 76)",
+  },
+  {
+    title: "LEGENDARY",
+    content: ["Rarity (1-2%)", "레전더리 아이템"],
+    color: " rgba(210, 53, 64, 0.2)",
+    lineColor: " rgba(210, 53, 64)",
+  },
+  {
+    title: "Super LEGENDARY",
+    content: ["Rarity (0.5-1%)", "슈퍼 레전더리 아이템"],
+    color: "rgba(0, 110, 121, 0.2)",
+    lineColor: "rgba(0, 110, 121)",
+  },
+];

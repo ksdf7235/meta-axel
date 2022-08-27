@@ -8,6 +8,7 @@ import Description from "../component/Home/Description";
 import Land from "../component/Home/Land";
 import Main from "../component/Home/Main";
 import Partners from "../component/Home/Partners";
+import Rarity from "../component/Home/Rarity";
 import RoadMap from "../component/Home/RoadMap";
 import Sale from "../component/Home/Sale";
 
@@ -20,6 +21,7 @@ function Home() {
       <Build />
       <Land />
       <Character />
+      <Rarity />
       <Sale />
       <Partners />
       <Company />
