@@ -102,3 +102,42 @@ export const LandData = [
     img: "/image/build/land_img_04.png",
   },
 ];
+
+export const LineData = [
+  {
+    img: "/image/roadmap/roadmap_img_01.png",
+    time: "2022 2Q-3Q",
+    content: [
+      "메인캐릭터 3D Esset -",
+      "주요 등장인물 캐릭터 PFP 민팅 -",
+      "콜라보 캐릭터 PFP 민팅 -",
+    ],
+  },
+  {
+    img: "/image/roadmap/roadmap_img_02.png",
+    time: "2022 3Q-4Q",
+    content: [
+      "메인캐릭터 3D Esset -",
+      "주요 등장인물 캐릭터 PFP 민팅 -",
+      "콜라보 캐릭터 PFP 민팅 -",
+    ],
+  },
+  {
+    img: "/image/roadmap/roadmap_img_03.png",
+    time: "2023 1Q-2Q",
+    content: [
+      "메인캐릭터 3D Esset -",
+      "주요 등장인물 캐릭터 PFP 민팅 -",
+      "콜라보 캐릭터 PFP 민팅 -",
+    ],
+  },
+  {
+    img: "/image/roadmap/roadmap_img_04.png",
+    time: "2023 3Q-4Q",
+    content: [
+      "메인캐릭터 3D Esset -",
+      "주요 등장인물 캐릭터 PFP 민팅 -",
+      "콜라보 캐릭터 PFP 민팅 -",
+    ],
+  },
+];

@@ -7,9 +7,9 @@ function Footer() {
       <FooterLayout>
         <Wrapper>
           <img
-            width='120px'
-            height='28px'
-            src={`${process.env.PUBLIC_URL}/image/header/NXDF_logo.png`}
+            width='240px'
+            height='56px'
+            src={`${process.env.PUBLIC_URL}/image/common/meta_axel_logo.png`}
           />
         </Wrapper>
         <Nav>
@@ -79,8 +79,8 @@ const Wrapper = styled.div`
   align-items: center;
 
   img {
-    max-width: 120px;
-    max-height: 28px;
+    min-width: 120px;
+    min-height: 28px;
   }
   ${media.small} {
     padding-left: 5px;
