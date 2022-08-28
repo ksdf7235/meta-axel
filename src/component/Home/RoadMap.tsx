@@ -12,7 +12,13 @@ const RoadMap: React.FC = () => {
         <Line>
           <LineGrid>
             {LineData.map(({ img, time, content }, i) => (
-              <LineContent number={i} img={img} time={time} content={content} />
+              <LineContent
+                key={`roadmap${i}`}
+                number={i}
+                img={img}
+                time={time}
+                content={content}
+              />
             ))}
           </LineGrid>
         </Line>

@@ -31,7 +31,7 @@ const Ark: React.FC = () => {
         <SlideLayout>
           <ArkSlider {...settings}>
             {ArkData.map(({ img }, i) => (
-              <Box img={img}></Box>
+              <Box key={`ark${i}`} img={img}></Box>
             ))}
           </ArkSlider>
         </SlideLayout>

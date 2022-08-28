@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { HomeLayout, CompanyLayout } from "../component/Common/Layout";
 import Ark from "../component/Home/Ark";
+import Attribute from "../component/Home/Attribute";
 import Build from "../component/Home/Build";
 import Character from "../component/Home/Character";
 import Company from "../component/Home/Company";
@@ -22,6 +23,7 @@ function Home() {
       <Land />
       <Character />
       <Rarity />
+      <Attribute />
       <Sale />
       <Partners />
       <Company />

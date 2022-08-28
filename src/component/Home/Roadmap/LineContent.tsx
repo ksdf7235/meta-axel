@@ -10,7 +10,6 @@ type LineProps = {
 
 const LineContent: React.FC<LineProps> = ({ img, content, number, time }) => {
   const Lr = number % 2 === 0 ? "right" : "left";
-  console.log(Lr);
   return number % 2 === 0 ? (
     <>
       <LineContentlayout>
@@ -20,8 +19,8 @@ const LineContent: React.FC<LineProps> = ({ img, content, number, time }) => {
         <LineBoxLayout>
           <LineContentDes Lr={Lr}>
             <ul>
-              {content?.map((item) => (
-                <li>{item}</li>
+              {content?.map((item, i) => (
+                <li key={`contentR${i}`}>{item}</li>
               ))}
             </ul>
           </LineContentDes>
@@ -41,8 +40,8 @@ const LineContent: React.FC<LineProps> = ({ img, content, number, time }) => {
           <Liner Lr={Lr}></Liner>
           <LineContentDes Lr={Lr}>
             <ul>
-              {content?.map((item) => (
-                <li>{item}</li>
+              {content?.map((item, i) => (
+                <li key={`contentL${i}`}>{item}</li>
               ))}
             </ul>
           </LineContentDes>

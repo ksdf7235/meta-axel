@@ -23,6 +23,7 @@ const Rarity: React.FC = () => {
         <RarityGrid>
           {RarityData.map(({ title, content, color, lineColor }, i) => (
             <RarityPlate
+              key={`rare${i}`}
               title={title}
               content={content}
               color={color}

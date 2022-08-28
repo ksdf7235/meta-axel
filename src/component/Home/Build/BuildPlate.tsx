@@ -9,7 +9,6 @@ type BulildProps = {
 };
 
 const BuildPlate: React.FC<BulildProps> = ({ img, title, des }) => {
-  console.log(img[0]);
   return (
     <BuildContent>
       <BuildContentDes>
