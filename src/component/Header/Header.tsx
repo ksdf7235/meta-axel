@@ -4,9 +4,41 @@ import { LangState } from "../../atoms";
 import { selectLang } from "../../lib/selectLang";
 import { SideSheet, Paragraph, CrossIcon } from "evergreen-ui";
 import media from "../../lib/media";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Navigation from "./Nav";
+import { useTransform, useScroll, motion, useMotionValue } from "framer-motion";
 
+function Header() {
+  const scrollRef = useRef(null);
+  const y = useMotionValue(0);
+  const { scrollYProgress } = useScroll();
+  const [scrollY, setScrollY] = useState(0);
+  const [isZero, setZero] = useState(false);
+  const opacity = useTransform(scrollYProgress, [1, 0.01, 0], [0, 0, 0.9]);
+  useEffect(() => {
+    return scrollYProgress.onChange((latest) => {
+      setScrollY(latest);
+      if (latest !== scrollY) {
+        setZero(false);
+      }
+      if (latest === 0) {
+        setZero(true);
+      }
+    });
+  }, [setZero, setScrollY]);
+
+  return (
+    <SHeader>
+      <HeaderContainer></HeaderContainer>
+      <HeaderLayout isZero={isZero}>
+        <Nav>
+          <Navigation />
+        </Nav>
+      </HeaderLayout>
+      <HeaderContainer></HeaderContainer>
+    </SHeader>
+  );
+}
 const SHeader = styled.header`
   width: 100%;
   height: 120px;
@@ -19,14 +51,14 @@ const SHeader = styled.header`
   z-index: 100;
 `;
 
-const HeaderLayout = styled.div`
+const HeaderLayout = styled(motion.div)<{ isZero: boolean }>`
   z-index: 100;
   width: 50%;
   height: 80px;
   border: 1px solid red;
   border-radius: 10px;
   color: gray;
-  opacity: 0.9;
+  opacity: ${(props) => (props.isZero ? 0.9 : 0)};
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -34,7 +66,6 @@ const HeaderLayout = styled.div`
   ${media.desktop} {
     justify-content: center;
   }
-  opacity: 0;
   :hover {
     opacity: 1;
   }
@@ -64,25 +95,4 @@ const HeaderContainer = styled.div`
   justify-content: flex-end;
 `;
 
-function Header() {
-  const [Lang, setLang] = useRecoilState(LangState);
-  const [isShown, setIsShown] = useState(false);
-  const [Scroll, setScroll] = useState(true);
-  const { HeaderLang } = selectLang(Lang);
-  // const ChangeLang = () => {
-  //   setLang((prev) => !prev);
-  // };
-
-  return (
-    <SHeader>
-      <HeaderContainer></HeaderContainer>
-      <HeaderLayout>
-        <Nav>
-          <Navigation />
-        </Nav>
-      </HeaderLayout>
-      <HeaderContainer></HeaderContainer>
-    </SHeader>
-  );
-}
 export default Header;
