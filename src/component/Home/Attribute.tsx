@@ -4,7 +4,6 @@ import { selectLang } from "../../lib/selectLang";
 import media from "../../lib/media";
 import { CommonLayout } from "../Common/Layout";
 import Slider from "react-slick";
-import { AttrData } from "../../Data/dummy";
 import { LittleSpan, TitleH1 } from "../Common/Title";
 import AttrPlate from "./Attr/AttrPlate";
 
@@ -29,6 +28,11 @@ const AttrGrid = styled.div`
   min-height: 600px;
   gap: 5px;
   grid-template-columns: repeat(4, 1fr);
+
+  ${media.small} {
+    width: 80%;
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const AttrLayout = styled(CommonLayout)`

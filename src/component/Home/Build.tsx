@@ -19,9 +19,35 @@ const Build: React.FC = () => {
     cssEase: "linear",
     prevArrow: <DownArrow />,
     nextArrow: <UpArrow />,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          vertical: false,
+          verticalSwiping: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+          prevArrow: <></>,
+          nextArrow: <></>,
+          appendDots: (dots: any) => (
+            <div
+              style={{
+                borderRadius: "10px",
+                padding: "10px",
+              }}
+            >
+              <ul style={{ margin: "10px", width: "100%" }}> {dots} </ul>
+            </div>
+          ),
+          customPaging: (i: any) => <div></div>,
+        },
+      },
+    ],
   };
   return (
     <BuildLayout id='build'>
+      <BuildTitledesk>Building NFTs</BuildTitledesk>
       <BuildContainer
         img={"image/build/build_img.png"}
         smimg={"image/build/build_img_sm.png"}
@@ -60,6 +86,22 @@ const BuildSlider = styled(Slider)`
       display: none !important;
     }
   }
+  .slick-dots {
+    bottom: -5rem;
+    ul {
+      padding: 1rem;
+    }
+    li {
+      width: 50px;
+      height: 20px;
+      background: no-repeat url("/image/build/build_dot_focus.png");
+      opacity: 0.2;
+      background-size: contain;
+    }
+    .slick-active {
+      opacity: 1;
+    }
+  }
 `;
 
 const UpArrow = styled.div`
@@ -87,11 +129,6 @@ const DownArrow = styled(UpArrow)`
     background: no-repeat url("/image/common/arrow_down.png");
   }
 `;
-const Box = styled.div`
-  min-width: 200px;
-  min-height: 200px;
-  background-color: white;
-`;
 
 const BuildSliderLayout = styled.div`
   width: 100%;
@@ -111,10 +148,12 @@ const BuildContainer = styled.div<{ img?: string; smimg?: string }>`
   background-repeat: no-repeat;
   background-position: center;
 
-  ${media.small} {
+  ${media.desktop} {
     width: 100%;
     background-image: ${(props) => `url(${props.smimg})`};
     background-size: 100% 95%;
+    min-height: 1000px;
+    margin: 10px;
   }
 `;
 
@@ -126,10 +165,27 @@ const BuildTitle = styled.div`
   margin-bottom: 2rem;
   font-weight: 700;
   font-size: 30px;
-  ${media.small} {
+  ${media.desktop} {
+    display: none;
     width: 100%;
     background-size: cover;
     margin-bottom: 2rem;
+    text-align: center;
+  }
+`;
+const BuildTitledesk = styled.div`
+  width: 90%;
+  height: 10%;
+  margin-left: 1rem;
+  min-height: 50px;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 30px;
+  ${media.desktop} {
+    width: 100%;
+    background-size: cover;
+    margin-top: 2rem;
+    margin-bottom: 0px;
     text-align: center;
   }
 `;

@@ -73,6 +73,7 @@ const LineBoxLayout = styled.div`
   width: 100%;
   display: flex;
   height: 80%;
+  position: relative;
 `;
 
 const LineGrid = styled.div`
@@ -93,6 +94,9 @@ const LineContentDes = styled.div<{ Lr?: string }>`
     props.Lr === "right" ? "flex-end" : "flex-start"};
   text-align: right;
   font-size: 12px;
+  position: relative;
+  /* left: ${(props) => (props.Lr === "right" ? "10%" : "-10%")}; */
+  z-index: 20;
   ul {
     background-image: ${(props) =>
       `url("image/roadmap/roadmap_content_bg_${props.Lr}.png")`};
@@ -107,12 +111,14 @@ const LineContentDes = styled.div<{ Lr?: string }>`
   }
 `;
 const Liner = styled.div<{ Lr?: string }>`
-  width: 20%;
+  width: 30%;
   height: 50%;
   background-image: ${(props) =>
     `url("image/roadmap/roadmap_content_line_${props.Lr}.png")`};
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
+  /* left: ${(props) => (props.Lr === "right" ? "5%" : "-5%")}; */
 `;
 
 export default LineContent;

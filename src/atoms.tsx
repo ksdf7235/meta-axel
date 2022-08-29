@@ -9,3 +9,7 @@ export const LangState = atom({
   key: "language",
   default: true,
 });
+export const isShow = atom({
+  key: "show",
+  default: false,
+});

@@ -60,6 +60,7 @@ const RarityTitle = styled.div`
   height: 20%;
   display: flex;
   align-items: center;
+  margin: 1rem 0px;
 `;
 
 export default RarityPlate;

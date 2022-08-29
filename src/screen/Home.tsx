@@ -22,9 +22,9 @@ function Home() {
       <Build />
       <Land />
       <Character />
+      <Sale />
       <Rarity />
       <Attribute />
-      <Sale />
       <Partners />
       <Company />
       <RoadMap />

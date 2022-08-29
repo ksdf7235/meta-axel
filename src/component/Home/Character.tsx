@@ -77,8 +77,9 @@ const ChaSlider = styled(Slider)`
   .slick-next:before {
     font-size: 0px;
   }
-  .slick-list :nth-child(1) {
+  .slick-list {
   }
+
   .slick-slide {
   }
 
@@ -103,7 +104,7 @@ const ChaGradientdown = styled.div`
   min-width: 100px;
   background: linear-gradient(to top, black, rgba(0, 0, 0, 0));
   position: absolute;
-  bottom: 0;
+  bottom: -5px;
 
   ${media.small} {
     min-width: 300px;
@@ -115,7 +116,7 @@ const ChaGradientup = styled.div`
   min-width: 100px;
   background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0));
   position: absolute;
-  top: 0;
+  top: -5px;
   ${media.small} {
     min-width: 300px;
   }
@@ -123,7 +124,6 @@ const ChaGradientup = styled.div`
 
 const SilderProps = styled.div<{ img?: string }>`
   height: 30%;
-  width: 80% !important;
   min-width: 80px;
   min-height: 150px;
   margin-bottom: 1rem;
@@ -162,14 +162,20 @@ const ChaConLayout = styled.div`
     color: gray;
   }
 
-  ${media.small} {
+  ${media.desktop} {
     order: 1;
   }
 `;
 const ChaSliderLayout = styled.div`
-  width: 80%;
+  width: 60%;
   display: flex;
   min-height: 300px;
+
+  ${media.desktop} {
+    width: 40%;
+    justify-content: space-between;
+    align-items: center;
+  }
   ${media.small} {
     width: 100%;
     justify-content: space-between;
@@ -178,7 +184,6 @@ const ChaSliderLayout = styled.div`
 `;
 
 const ChaGradationLayout = styled.div`
-  width: 50%;
   display: flex;
   min-height: 300px;
   flex-direction: column;
@@ -186,7 +191,7 @@ const ChaGradationLayout = styled.div`
   justify-content: center;
   position: relative;
   ${media.small} {
-    width: 100%;
+    width: 80%;
   }
 `;
 
@@ -200,7 +205,7 @@ const ChaContainer = styled.div<{ img?: string }>`
   background-repeat: no-repeat;
   background-position: center;
 
-  ${media.small} {
+  ${media.desktop} {
     //0825 수정해야댐
     flex-direction: column;
     width: auto;

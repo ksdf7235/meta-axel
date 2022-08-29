@@ -33,36 +33,12 @@ const RoadMapLayout = styled(CommonLayout)`
   justify-content: center;
 `;
 
-const LineContentlayout = styled.div<{ img?: string }>`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-image: ${(props) => `url(${props.img})`};
-  background-position: center;
-  background-repeat: no-repeat;
-`;
-
-const LineTitle = styled.div`
-  width: 100%;
-  display: flex;
-  height: 20%;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-`;
-const LineBoxLayout = styled.div`
-  width: 100%;
-  display: flex;
-  height: 80%;
-`;
-
 const LineGrid = styled.div`
   width: 100%;
   height: 80%;
   min-height: 960px;
   display: grid;
-  gap: 10px;
+  gap: -10px;
   grid-template-columns: repeat(2, 1fr);
 `;
 

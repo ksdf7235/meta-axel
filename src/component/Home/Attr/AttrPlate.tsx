@@ -58,11 +58,16 @@ const AttrPlateLayout = styled.div`
     rgba(0, 0, 0, 0.2) 51.52%,
     rgba(210, 53, 64, 0.2) 100%
   );
-
+  border: 1px solid rgba(210, 53, 64, 1);
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
+  ${media.small} {
+    :nth-child(n + 2) {
+      display: none;
+    }
+  }
 `;
 
 const AttrImg = styled.div<{ img?: string }>`
@@ -96,10 +101,9 @@ const AttrTitle = styled.span`
 
 const Attr = styled.div`
   width: 90%;
-  height: 50%;
   min-height: 200px;
   display: grid;
-  gap: 0.5rem;
+  gap: 0.2rem;
   align-items: center;
   justify-content: center;
   text-align: center;

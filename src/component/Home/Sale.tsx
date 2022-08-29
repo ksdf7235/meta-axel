@@ -78,7 +78,7 @@ const Sliderbottom = styled.div`
 `;
 
 const SliderContent = styled.div`
-  z-index: 100;
+  z-index: 10;
   min-height: 120px;
   min-width: 100px;
   width: 100%;

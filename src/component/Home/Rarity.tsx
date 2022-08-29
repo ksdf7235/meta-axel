@@ -10,7 +10,7 @@ import RarityPlate from "./Rarity/RarityPlate";
 
 const Rarity: React.FC = () => {
   return (
-    <RarityLayout>
+    <RarityLayout id='rare'>
       <RarityContainer>
         <TitleH1>RARITY</TitleH1>
         <RaritySpan>
@@ -50,10 +50,17 @@ const RarityGrid = styled.div`
   min-height: 400px;
   gap: 5px;
   grid-template-columns: repeat(3, 1fr);
+  ${media.small} {
+    grid-template-columns: repeat(1, 1fr);
+    min-height: 600px;
+  }
 `;
 
 const RaritySpan = styled(LittleSpan)`
   width: 30%;
+  ${media.small} {
+    width: 80%;
+  }
 `;
 
 const RarityContainer = styled.div`
