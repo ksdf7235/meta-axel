@@ -6,8 +6,11 @@ import { CommonLayout } from "../Common/Layout";
 import Slider from "react-slick";
 import { ArkData } from "../../Data/dummy";
 import { LittleSpan, TitleH1 } from "../Common/Title";
+import { LangState } from "../../atoms";
 
 const Ark: React.FC = () => {
+  const [Lang, setLang] = useRecoilState(LangState);
+  const { Ark: arkLang } = selectLang(Lang);
   const settings = {
     className: "center",
     centerMode: true,
@@ -24,14 +27,17 @@ const Ark: React.FC = () => {
   return (
     <ArkLayout>
       <ArkContainer>
-        <TitleH1>META AXEL ARK</TitleH1>
-        <LittleSpan>메타엑셀 nft홀더 전용 프라이빗 라운지</LittleSpan>
+        <TitleH1>{arkLang?.mainTitle}</TitleH1>
+        <LittleSpan>{arkLang?.mainBoxTitle}</LittleSpan>
       </ArkContainer>
       <ArkSlideLayout>
         <SlideLayout>
           <ArkSlider {...settings}>
-            {ArkData.map(({ img }, i) => (
-              <Box key={`ark${i}`} img={img}></Box>
+            {ArkData.map(({ img, url }, i) => (
+              <IFrame
+                src={`https://www.youtube.com/embed/${url}`}
+                allow='accelerometer; picture-in-picture'
+              ></IFrame>
             ))}
           </ArkSlider>
         </SlideLayout>
@@ -87,17 +93,13 @@ const SlideLayout = styled.div`
   flex-direction: column;
 `;
 
-const Box = styled.div<{ img?: string }>`
-  color: black;
+const IFrame = styled.iframe`
   width: 200px;
   min-height: 600px;
-  font-size: 66px;
-  background-image: ${(props) => `url(${props.img})`};
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: fill;
-  object-fit: contain;
-  border: 10px solid black;
+
+  .ytp-ytp-gradient-top {
+    display: none;
+  }
 `;
 const ArkLayout = styled(CommonLayout)`
   margin-top: 5rem;

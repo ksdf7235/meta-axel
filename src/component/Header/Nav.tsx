@@ -11,11 +11,12 @@ function Navigation() {
   const [Lang, setLang] = useRecoilState(LangState);
   const [isShown, setIsShown] = useRecoilState(isShow);
   const { HeaderLang } = selectLang(Lang);
-  // const ChangeLang = () => {
-  //   setLang((prev) => !prev);
-  // };
+  const ChangeLang = () => {
+    setLang((prev) => !prev);
+  };
   const ChangeShow = () => {
-    setIsShown((prev) => !prev);
+    const width = window.innerWidth;
+    if (width < 1200) setIsShown((prev) => !prev);
   };
   const Meta = () => {
     alert("Comming soon");
@@ -99,6 +100,9 @@ function Navigation() {
         >
           <li>{HeaderLang[6]}</li>
         </Link>
+      </a>
+      <a onClick={ChangeLang}>
+        <li>{Lang ? "EN" : "KR"}</li>
       </a>
     </>
   );

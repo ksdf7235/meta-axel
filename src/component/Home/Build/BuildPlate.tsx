@@ -5,17 +5,16 @@ import media from "../../../lib/media";
 type BulildProps = {
   img: string[];
   title: string[];
-  des?: string;
 };
 
-const BuildPlate: React.FC<BulildProps> = ({ img, title, des }) => {
+const BuildPlate: React.FC<BulildProps> = ({ img, title }) => {
   return (
     <BuildContent>
       <BuildContentDes>
         <BuildContentDiv>
           <h1>{title[0]}</h1>
           <h2>{title[1]}</h2>
-          <span>{des}</span>
+          <span>{title[2]}</span>
         </BuildContentDiv>
       </BuildContentDes>
       <BuildContentImg>
@@ -31,7 +30,7 @@ const BuildPlate: React.FC<BulildProps> = ({ img, title, des }) => {
 
 const BuildContentImgDiv = styled.div`
   display: flex;
-  min-width: 400px;
+  min-width: 300px;
   height: 50%;
   justify-content: center;
   align-items: center;
@@ -103,7 +102,7 @@ const BuildContentImg = styled.div`
 const BuildImg = styled.div<{ img?: string }>`
   width: 100%;
   height: 10%;
-  min-height: 200px;
+  min-height: 150px;
   background-image: ${(props) => `url(${props.img})`};
   background-position: bottom;
   background-repeat: no-repeat;
@@ -117,8 +116,8 @@ const BuildImg = styled.div<{ img?: string }>`
 const BuildImg2 = styled(BuildImg)`
   margin-top: 5px;
   height: 50%;
-  min-width: 400px;
-  min-height: 200px;
+  min-width: 300px;
+  min-height: 150px;
   background-size: cover;
   ${media.small} {
     min-width: 200px;

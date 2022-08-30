@@ -6,8 +6,12 @@ import { BuildData, LandData } from "../../Data/dummy";
 import Slider from "react-slick";
 import { useState } from "react";
 import BuildPlate from "./Build/BuildPlate";
+import { selectLang } from "../../lib/selectLang";
+import { LangState } from "../../atoms";
 
 const Build: React.FC = () => {
+  const [Lang, setLang] = useRecoilState(LangState);
+  const { Build: buildLang } = selectLang(Lang);
   const settings = {
     infinite: true,
     vertical: true,
@@ -47,16 +51,20 @@ const Build: React.FC = () => {
   };
   return (
     <BuildLayout id='build'>
-      <BuildTitledesk>Building NFTs</BuildTitledesk>
+      <BuildTitledesk>{buildLang?.mainTitle}</BuildTitledesk>
       <BuildContainer
         img={"image/build/build_img.png"}
         smimg={"image/build/build_img_sm.png"}
       >
-        <BuildTitle>Building NFTs</BuildTitle>
+        <BuildTitle>{buildLang?.mainTitle}</BuildTitle>
         <BuildSliderLayout>
           <BuildSlider {...settings}>
-            {BuildData.map(({ img, des, title }, i) => (
-              <BuildPlate key={i} img={img} des={des} title={title} />
+            {BuildData.map(({ img }, i: any) => (
+              <BuildPlate
+                key={i}
+                img={img}
+                title={buildLang?.ContainerContent[i]}
+              />
             ))}
           </BuildSlider>
         </BuildSliderLayout>
@@ -139,7 +147,7 @@ const BuildSliderLayout = styled.div`
 const BuildContainer = styled.div<{ img?: string; smimg?: string }>`
   width: ${(props) => props.theme.CommonContentWidth};
   background-image: ${(props) => `url(${props.img})`};
-  min-height: 650px;
+  min-height: 850px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -174,6 +182,7 @@ const BuildTitle = styled.div`
   }
 `;
 const BuildTitledesk = styled.div`
+  display: none;
   width: 90%;
   height: 10%;
   margin-left: 1rem;
@@ -182,6 +191,7 @@ const BuildTitledesk = styled.div`
   font-weight: 700;
   font-size: 30px;
   ${media.desktop} {
+    display: block;
     width: 100%;
     background-size: cover;
     margin-top: 2rem;

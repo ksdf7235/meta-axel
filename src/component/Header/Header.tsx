@@ -23,25 +23,14 @@ function Header() {
   useEffect(() => {
     return scrollYProgress.onChange((latest) => {
       setScrollY(latest);
-      if (latest !== scrollY) {
-        setZero(false);
-      }
+      setZero(false);
+
       if (latest === 0) {
         setZero(true);
       }
     });
-  }, [setZero, setScrollY]);
-  const NAVContainer = styled.div`
-    display: flex;
+  }, []);
 
-    a {
-      display: flex;
-      text-align: center;
-      :hover {
-        color: white;
-      }
-    }
-  `;
   return (
     <SHeader>
       <HeaderContainerLeft>
@@ -79,7 +68,17 @@ function Header() {
     </SHeader>
   );
 }
+const NAVContainer = styled.div`
+  display: flex;
 
+  a {
+    display: flex;
+    text-align: center;
+    :hover {
+      color: white;
+    }
+  }
+`;
 const SideContainer = styled.div`
   position: fixed;
   margin-top: 5rem;

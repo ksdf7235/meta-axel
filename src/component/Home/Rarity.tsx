@@ -7,25 +7,23 @@ import Slider from "react-slick";
 import { ArkData, RarityData } from "../../Data/dummy";
 import { LittleSpan, TitleH1 } from "../Common/Title";
 import RarityPlate from "./Rarity/RarityPlate";
+import { LangState } from "../../atoms";
 
 const Rarity: React.FC = () => {
+  const [Lang, setLang] = useRecoilState(LangState);
+  const { Rarity: rareLang } = selectLang(Lang);
   return (
     <RarityLayout id='rare'>
       <RarityContainer>
-        <TitleH1>RARITY</TitleH1>
-        <RaritySpan>
-          메타액슬에서 발행되는 모든 NFT에는 향후 제공될 P2E 메타버스에서
-          사용가능한 아이템이 최소 1종 탑재되어 있습니다. 희귀도가 높은
-          NFT들에게는 메타버스 내 특별한 기능이 부과 됩니다. 또한 각 NFT의
-          희귀도에 따라 NXDF 생태계 보상이 달라집니다. 희귀도 계산 공식과 표는
-          메타액슬 NFT가 모두 발행 된 이후 별도 페이지에서 공개됩니다.
-        </RaritySpan>
+        <TitleH1>{rareLang.mainTitle}</TitleH1>
+        <RaritySpan>{rareLang.mainBoxTitle}</RaritySpan>
         <RarityGrid>
           {RarityData.map(({ title, content, color, lineColor }, i) => (
             <RarityPlate
               key={`rare${i}`}
               title={title}
               content={content}
+              LangContent={rareLang.Content[i]}
               color={color}
               lineColor={lineColor}
             />

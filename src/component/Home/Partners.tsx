@@ -67,6 +67,9 @@ const PartnerGrid = styled.div`
   justify-content: space-between;
   gap: 1rem 2rem;
   margin-bottom: 5rem;
+  ${media.desktop} {
+    width: auto;
+  }
   ${media.small} {
     grid-template-columns: repeat(3, 1fr);
   }

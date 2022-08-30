@@ -6,13 +6,15 @@ import { CommonLayout } from "../Common/Layout";
 import Slider from "react-slick";
 import { LittleSpan, TitleH1 } from "../Common/Title";
 import AttrPlate from "./Attr/AttrPlate";
+import { LangState } from "../../atoms";
 
 const Attribute: React.FC = () => {
+  const [Lang, setLang] = useRecoilState(LangState);
+  const { Attr: attrLang } = selectLang(Lang);
   return (
     <AttrLayout>
       <AttrContainer>
-        <TitleH1>ATTRIBUTES</TitleH1>
-        <LittleSpan>메타엑셀 nft홀더 전용 프라이빗 라운지</LittleSpan>
+        <TitleH1>{attrLang.mainTitle}</TitleH1>
       </AttrContainer>
       <AttrGrid>
         <AttrPlate />

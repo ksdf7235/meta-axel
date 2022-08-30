@@ -4,8 +4,12 @@ import media from "../../lib/media";
 import { CommonLayout } from "../Common/Layout";
 import Slider from "react-slick";
 import { CharacterData, CharacterData2 } from "../../Data/dummy";
+import { LangState } from "../../atoms";
+import { selectLang } from "../../lib/selectLang";
 
 const Character: React.FC = () => {
+  const [Lang, setLang] = useRecoilState(LangState);
+  const { Character: ChaLang } = selectLang(Lang);
   const settings = {
     infinite: true,
     slidesToShow: 3,
@@ -42,13 +46,9 @@ const Character: React.FC = () => {
           <h1>NFTS</h1>
           <h3>BURNT PINK SQUAD</h3>
           <ul>
-            <li>이름 : 메타엑셀 아이돌즈</li>
-            <li>별명 : 불탄핑크스쿼드</li>
-            <li>민팅가 : 3.5 SOL</li>
-            <li>총개수 : 13,000</li>
-            <li>VIP판매 : 2,000</li>
-            <li>퍼블릭 세일 : 9,000</li>
-            <li>리저브 : 2,000</li>
+            {ChaLang.ChaAttr?.map((data, i) => (
+              <li>{data}</li>
+            ))}
           </ul>
         </ChaConLayout>
         <ChaGradationLayout>

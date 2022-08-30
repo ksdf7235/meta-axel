@@ -3,6 +3,7 @@ import { useRecoilState } from "recoil";
 import { selectLang } from "../../lib/selectLang";
 import { LangState } from "../../atoms";
 import media from "../../lib/media";
+import Animation from "./Animation/Animation";
 
 const Main: React.FC = () => {
   const MintClick = () => {
@@ -76,6 +77,15 @@ const MainMedia = styled.div`
   background-size: contain, 400px 200px, 400px 200px;
   background-repeat: no-repeat;
   background-position: left, center 30%, right bottom;
+  ${media.desktop} {
+    width: 100%;
+    background-image: url("image/main/main_cha_01.png"),
+      url("image/main/bubble_cha.png");
+    background-size: 50%, 400px 200px;
+    background-position: left, center;
+    min-height: 1000px;
+    margin: 10px;
+  }
 
   ${media.small} {
     width: 100%;

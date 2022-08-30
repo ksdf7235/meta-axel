@@ -6,6 +6,8 @@ import { BuildData, LandData } from "../../Data/dummy";
 import Slider from "react-slick";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { selectLang } from "../../lib/selectLang";
+import { LangState } from "../../atoms";
 
 const box = {
   invisible: {
@@ -24,18 +26,16 @@ const box = {
   exit: { x: -500, opacity: 0, scale: 0, transition: { duration: 1 } },
 };
 const Land: React.FC = () => {
+  const [Lang, setLang] = useRecoilState(LangState);
+  const { Land: LandLang } = selectLang(Lang);
   const [click, setClick] = useState(1);
   const toggleClick = (id: any) => setClick(id);
   return (
     <BuildLayout id='land'>
       <LandContainer>
         <LandTitle>
-          <h1>LAND NFTS</h1>
-          <span>
-            각각의 땅들은 모두 장단점이 있고, 특수랜드는 좀비가 나올지도 모르고
-            특별한 기능이 있다. 특수랜드는 추후 게임 오픈 시점에 확정된 NFT로
-            교환된다.
-          </span>
+          <h1>{LandLang.mainTitle}</h1>
+          <span>{LandLang.mainBoxTitle[0]}</span>
         </LandTitle>
         <LandLayout
           img={"image/build/land_frame.png"}

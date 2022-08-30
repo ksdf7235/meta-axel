@@ -4,6 +4,7 @@ import media from "../../../lib/media";
 type RareProps = {
   title?: string;
   content: string[];
+  LangContent: string;
   color?: string;
   lineColor: string;
 };
@@ -12,6 +13,7 @@ const RarityPlate: React.FC<RareProps> = ({
   title,
   content,
   color,
+  LangContent,
   lineColor,
 }) => {
   return (
@@ -23,7 +25,7 @@ const RarityPlate: React.FC<RareProps> = ({
         <span>{content[0]}</span>
       </RarityElement>
       <RarityElement color={color}>
-        <span>{content[1]}</span>
+        <span>{LangContent}</span>
       </RarityElement>
     </RarityPlateLayout>
   );
