@@ -4,6 +4,7 @@ import { selectLang } from "../../lib/selectLang";
 import { LangState } from "../../atoms";
 import media from "../../lib/media";
 import Animation from "./Animation/Animation";
+import Scri from "./Animation/scri";
 
 const Main: React.FC = () => {
   const MintClick = () => {
@@ -11,7 +12,9 @@ const Main: React.FC = () => {
   };
   return (
     <MainLayout id='Main'>
-      <MainMedia></MainMedia>
+      <MainMedia>
+        <Scri />
+      </MainMedia>
       <MainContent>
         <h1>META AXEL PROJECT</h1>
         <MainBtnContainer>
@@ -72,23 +75,25 @@ const MainMedia = styled.div`
   width: ${(props) => props.theme.CommonContentWidth};
   height: auto;
   min-height: 600px;
-  background-image: url("image/main/main_cha_01.png"),
-    url("image/main/bubble_cha.png"), url("image/main/bubble_bg.png");
-  background-size: contain, 400px 200px, 400px 200px;
+  background-image: url("image/main/bubble_cha.png"),
+    url("image/main/bubble_bg.png");
+  background-size: 400px 200px, 400px 200px;
   background-repeat: no-repeat;
-  background-position: left, center 30%, right bottom;
-  ${media.desktop} {
+  background-position: center 30%, right bottom;
+  ${media.small} {
+    background-image: none !important;
     width: 100%;
-    background-image: url("image/main/main_cha_01.png"),
-      url("image/main/bubble_cha.png");
-    background-size: 50%, 400px 200px;
-    background-position: left, center;
+  }
+  ${media.desktop} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-image: url("image/main/bubble_cha.png");
+    background-size: 400px 200px;
+    background-position: right;
     min-height: 1000px;
     margin: 10px;
-  }
-
-  ${media.small} {
-    width: 100%;
   }
 `;
 

@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import { ArkData } from "../../Data/dummy";
 import { LittleSpan, TitleH1 } from "../Common/Title";
 import { LangState } from "../../atoms";
+import ReactPlayer from "react-player/youtube";
 
 const Ark: React.FC = () => {
   const [Lang, setLang] = useRecoilState(LangState);
@@ -35,7 +36,7 @@ const Ark: React.FC = () => {
           <ArkSlider {...settings}>
             {ArkData.map(({ img, url }, i) => (
               <IFrame
-                src={`https://www.youtube.com/embed/${url}`}
+                src={`https://www.youtube.com/embed/${url}?controls=0&loop=1`}
                 allow='accelerometer; picture-in-picture'
               ></IFrame>
             ))}

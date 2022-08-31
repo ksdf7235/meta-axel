@@ -14,7 +14,7 @@ interface Coordinate {
 }
 
 const AniCanvas = styled.canvas`
-  width: 200px;
+  width: 800px;
   height: 200px;
   background-color: white;
 `;

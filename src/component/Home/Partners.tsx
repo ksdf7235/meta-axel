@@ -40,6 +40,10 @@ const NxdfBanner = styled.div`
   margin-bottom: 2rem;
   border-radius: 20px;
   background-color: gray;
+
+  ${media.small} {
+    width: 80%;
+  }
 `;
 
 const Why = styled.div`

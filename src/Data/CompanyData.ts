@@ -1,54 +1,60 @@
 export const Companies = [
   {
-    img: "/image/company/aldrin.png",
+    img: "/image/company/aldrin_mark.png",
   },
   {
-    img: "/image/company/daib_logo.png",
+    img: "/image/company/daib_mark.png",
   },
   {
-    img: "/image/company/edensol.jpeg",
+    img: "/image/company/eden_mark.png",
   },
   {
-    img: "/image/company/epik_full.jpeg",
+    img: "/image/company/epik_mark.png",
   },
   {
-    img: "/image/company/everland.jpeg",
+    img: "/image/company/flucity_mark.png",
   },
   {
-    img: "/image/company/fame.png",
+    img: "/image/company/fame_mark.png",
   },
   {
-    img: "/image/company/fluidity.png",
+    img: "/image/company/seven_mark.png",
   },
 
   {
-    img: "/image/company/mkyu.png",
+    img: "/image/company/eye_mark.png",
   },
   {
-    img: "/image/company/stream.png",
+    img: "/image/company/mkyu_mark.png",
   },
   {
-    img: "/image/company/vers_logo.png",
+    img: "/image/company/fsn_mark.png",
   },
   {
-    img: "/image/company/partner04.png",
+    img: "/image/company/sbs_mark.png",
   },
   {
-    img: "/image/company/partner10.png",
+    img: "/image/company/warp_mark.png",
   },
   {
-    img: "/image/company/partner14-m.png",
+    img: "/image/company/solsea_mark.png",
   },
   {
-    img: "/image/company/partner15-m.png",
+    img: "/image/company/zebec_mark.png",
   },
   {
-    img: "/image/company/partner16.png",
+    img: "/image/company/sf_mark.png",
   },
   {
-    img: "/image/company/partner17.png",
+    img: "/image/company/aas_mark.png",
   },
   {
-    img: "/image/company/partner18.png",
+    img: "/image/company/tc_mark.png",
+  },
+  {
+    img: "/image/company/lbio_mark.png",
+  },
+  {
+    img: "/image/company/169_mark.png",
   },
 ];

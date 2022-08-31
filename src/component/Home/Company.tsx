@@ -51,9 +51,8 @@ const CompanyImg = styled.div<{ img?: string }>`
   background-image: ${(props) => `url(${props.img})`};
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
-  min-height: 60px;
-  background-color: white;
+  background-size: 150%;
+  min-height: 100px;
   border-radius: 20px;
 
   ${media.small} {
