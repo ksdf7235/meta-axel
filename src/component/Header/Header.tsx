@@ -34,7 +34,7 @@ function Header() {
   return (
     <SHeader>
       <HeaderContainerLeft>
-        <img src='/image/common/meta_axel_logo.png' />
+        <img alt='12' src='/image/common/meta_axel_logo.png' />
       </HeaderContainerLeft>
       <HeaderLayout isZero={isZero}>
         <Nav>
@@ -115,19 +115,20 @@ const Hamburger = styled.div<{ isShown: boolean }>`
     cursor: pointer;
   }
 `;
-const SHeader = styled.header`
+const SHeader = styled.div`
   width: 100%;
   height: 120px;
   padding: 18px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  top: 5vh;
   z-index: 100;
   ${media.desktop} {
-    height: 80px;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
     padding: 0px;
     background-color: #000000;
   }

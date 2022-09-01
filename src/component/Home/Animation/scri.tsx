@@ -23,8 +23,7 @@ function Scri() {
 }
 
 const Ani = styled(Spritesheet)`
-  width: 400px;
-  height: 600px;
+  width: 500px;
 `;
 
 export default Scri;

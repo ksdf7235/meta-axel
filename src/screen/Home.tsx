@@ -12,6 +12,7 @@ import Partners from "../component/Home/Partners";
 import Rarity from "../component/Home/Rarity";
 import RoadMap from "../component/Home/RoadMap";
 import Sale from "../component/Home/Sale";
+import Header from "../component/Header/Header";
 
 function Home() {
   return (

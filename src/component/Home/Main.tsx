@@ -5,6 +5,7 @@ import { LangState } from "../../atoms";
 import media from "../../lib/media";
 import Animation from "./Animation/Animation";
 import Scri from "./Animation/scri";
+import Header from "../Header/Header";
 
 const Main: React.FC = () => {
   const [Lang, setLang] = useRecoilState(LangState);
@@ -13,6 +14,7 @@ const Main: React.FC = () => {
   };
   return (
     <MainLayout id='Main'>
+      <Header />
       <MainMedia>
         <Scri />
       </MainMedia>
@@ -45,6 +47,8 @@ const MainContent = styled.div`
   justify-content: center;
   flex-direction: column;
   margin-bottom: 5rem;
+  position: relative;
+  top: -10vh;
   h1 {
     font-size: 60px;
     font-weight: bold;
@@ -80,15 +84,14 @@ const MainBtn = styled.div<{ img?: string }>`
 `;
 
 const MainMedia = styled.div`
-  margin-top: 15rem;
+  margin-top: 1rem;
   width: ${(props) => props.theme.CommonContentWidth};
   height: auto;
   min-height: 600px;
-  background-image: url("image/main/bubble_cha.png"),
-    url("image/main/bubble_bg.png");
-  background-size: 400px 200px, 400px 200px;
+  background-image: url("image/main/bubble_cha.png");
+  background-size: 400px 200px;
   background-repeat: no-repeat;
-  background-position: center 30%, right bottom;
+  background-position: 70% 40%;
   ${media.small} {
     background-image: none !important;
     width: 100%;
@@ -101,7 +104,7 @@ const MainMedia = styled.div`
     background-image: url("image/main/bubble_cha.png");
     background-size: 400px 200px;
     background-position: right;
-    min-height: 1000px;
+    min-height: 800px;
     margin: 10px;
   }
 `;

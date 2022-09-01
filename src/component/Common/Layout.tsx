@@ -16,7 +16,6 @@ const Content = styled.main`
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <Header />
       <Content>{children}</Content>
       <Footer />
     </>
