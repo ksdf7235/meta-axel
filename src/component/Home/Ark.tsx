@@ -35,10 +35,13 @@ const Ark: React.FC = () => {
         <SlideLayout>
           <ArkSlider {...settings}>
             {ArkData.map(({ img, url }, i) => (
-              <IFrame
-                src={`https://www.youtube.com/embed/${url}?controls=0&loop=1`}
-                allow='accelerometer; picture-in-picture'
-              ></IFrame>
+              <FrameLayout>
+                <IFrame
+                  src={`https://www.youtube.com/embed/${url}?controls=0?light=1`}
+                  allow='accelerometer; picture-in-picture'
+                ></IFrame>
+                <Frame />
+              </FrameLayout>
             ))}
           </ArkSlider>
         </SlideLayout>
@@ -46,6 +49,19 @@ const Ark: React.FC = () => {
     </ArkLayout>
   );
 };
+const FrameLayout = styled.div`
+  position: relative;
+`;
+const Frame = styled.div`
+  width: 100%;
+  height: 600px;
+  background-color: black;
+  opacity: 0.8;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+`;
 
 const ArkSlider = styled(Slider)`
   .slick-center {
@@ -69,6 +85,11 @@ const ArkSlider = styled(Slider)`
     right: 15%;
     ${media.small} {
       display: none !important;
+    }
+  }
+  .slick-center {
+    ${Frame} {
+      width: 0px;
     }
   }
 `;
@@ -95,7 +116,7 @@ const SlideLayout = styled.div`
 `;
 
 const IFrame = styled.iframe`
-  width: 200px;
+  width: 100%;
   min-height: 600px;
 
   .ytp-ytp-gradient-top {

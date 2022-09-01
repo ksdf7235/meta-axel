@@ -1,8 +1,7 @@
 {
   "hosting": {
-    "cleanUrls": true,
+    "site": "metaaxel",
     "public": "build",
-    "target": "nxdfio",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   }
 }

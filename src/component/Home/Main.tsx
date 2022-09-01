@@ -7,6 +7,7 @@ import Animation from "./Animation/Animation";
 import Scri from "./Animation/scri";
 
 const Main: React.FC = () => {
+  const [Lang, setLang] = useRecoilState(LangState);
   const MintClick = () => {
     alert("comming soon");
   };
@@ -19,7 +20,15 @@ const Main: React.FC = () => {
         <h1>META AXEL PROJECT</h1>
         <MainBtnContainer>
           <MainBtn img={"image/common/btn_green.png"}>
-            <a href='https://form.jotform.com/222268943302050'>White list</a>
+            <a
+              href={
+                Lang
+                  ? "https://form.jotform.com/221965247305053"
+                  : "https://form.jotform.com/222268943302050"
+              }
+            >
+              White list
+            </a>
           </MainBtn>
           <MainBtn img={"image/common/btn_pink.png"}>
             <a onClick={MintClick}>Mint NFT</a>
