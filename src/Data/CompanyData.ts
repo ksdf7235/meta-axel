@@ -20,22 +20,13 @@ export const Companies = [
   {
     img: "/image/company/seven_mark.png",
   },
-
   {
     img: "/image/company/eye_mark.png",
   },
   {
     img: "/image/company/mkyu_mark.png",
   },
-  {
-    img: "/image/company/fsn_mark.png",
-  },
-  {
-    img: "/image/company/sbs_mark.png",
-  },
-  {
-    img: "/image/company/warp_mark.png",
-  },
+
   {
     img: "/image/company/solsea_mark.png",
   },

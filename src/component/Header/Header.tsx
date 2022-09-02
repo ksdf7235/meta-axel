@@ -18,7 +18,7 @@ function Header() {
   // };
   const { scrollYProgress } = useScroll();
   const [scrollY, setScrollY] = useState(0);
-  const [isZero, setZero] = useState(false);
+  const [isZero, setZero] = useState(true);
   const opacity = useTransform(scrollYProgress, [1, 0.01, 0], [0, 0, 0.9]);
   useEffect(() => {
     return scrollYProgress.onChange((latest) => {
@@ -65,9 +65,20 @@ function Header() {
           </SideContainer>
         </SideSheet>
       </HeaderContainerRight>
+      <MetaLogo src='image/common/metaaxel_logo.png ' />
     </SHeader>
   );
 }
+
+const MetaLogo = styled.img`
+  position: absolute;
+  width: 100px;
+  height: 120px;
+  bottom: 5rem;
+  left: 50%;
+  z-index: 1001;
+`;
+
 const NAVContainer = styled.div`
   display: flex;
 
@@ -84,6 +95,7 @@ const SideContainer = styled.div`
   margin-top: 5rem;
   width: 100%;
   height: 100%;
+  z-index: 99;
   background-color: ${(props) => props.theme.headerColor};
 `;
 const HamburgerNav = styled.ul`
@@ -104,6 +116,7 @@ const Hamburger = styled.div<{ isShown: boolean }>`
   display: none;
   width: 100%;
   height: 100%;
+  z-index: 101;
   background-repeat: no-repeat;
   background-position: center;
   background-image: ${(props) =>
@@ -118,11 +131,13 @@ const Hamburger = styled.div<{ isShown: boolean }>`
 const SHeader = styled.div`
   width: 100%;
   height: 120px;
+  position: absolute;
+  top: 10%;
   padding: 18px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
+  z-index: 1000;
   ${media.desktop} {
     position: fixed;
     top: 0;

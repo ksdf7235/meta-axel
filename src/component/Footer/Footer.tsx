@@ -7,33 +7,12 @@ function Footer() {
       <FooterLayout>
         <Wrapper>
           <img
-            width='240px'
-            height='56px'
-            src={`${process.env.PUBLIC_URL}/image/common/meta_axel_logo.png`}
+            width='46px'
+            height='55px'
+            src='image/common/metaaxel_logo_b.png'
           />
+          <span>COPYRIGHT ⓒ Meta Axel. ALL RIGHTS RESERVED</span>
         </Wrapper>
-        <Nav>
-          <a href='https://discord.gg/UxAYWbkXyS'>
-            <ImgIcon
-              src={`${process.env.PUBLIC_URL}/image/common/icon-discode.png`}
-            />
-          </a>
-          <a href='https://www.reddit.com/r/next_defi_protocol/'>
-            <ImgIcon
-              src={`${process.env.PUBLIC_URL}/image/common/icon-reddit.png`}
-            />
-          </a>
-          <a href='https://twitter.com/nxdf16'>
-            <ImgIcon
-              src={`${process.env.PUBLIC_URL}/image/common/icon-twitter.png`}
-            />
-          </a>
-          <a href='https://t.me/nxdfarmy'>
-            <ImgIcon
-              src={`${process.env.PUBLIC_URL}/image/common/icon-telegram.png`}
-            />
-          </a>
-        </Nav>
       </FooterLayout>
     </FooterL>
   );
@@ -51,7 +30,7 @@ const Nav = styled.ul`
 
 const FooterL = styled.footer`
   width: 100%;
-  height: 120px;
+  min-height: 120px;
   background-color: ${(props) => props.theme.headerColor};
   padding: 18px 0px;
   display: flex;
@@ -64,7 +43,7 @@ const FooterLayout = styled.div`
   max-width: 1200px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   ${media.small} {
     width: 100%;
@@ -73,14 +52,19 @@ const FooterLayout = styled.div`
 
 const Wrapper = styled.div`
   max-width: 1920px;
-  width: 40%;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
 
   img {
-    min-width: 120px;
-    min-height: 28px;
+    min-width: 46px;
+    min-height: 55px;
+  }
+  span {
+    font-size: 12px;
+    color: gray;
   }
   ${media.small} {
     padding-left: 5px;

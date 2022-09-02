@@ -69,6 +69,9 @@ const BuildContentDiv = styled.div`
     font-weight: 700;
   }
   span {
+    display: inline-block;
+    color: gray;
+    width: 80%;
   }
   ${media.desktop} {
     margin: 3rem 0px;

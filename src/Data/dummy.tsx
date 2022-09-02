@@ -106,7 +106,7 @@ export const LandData = [
 export const LineData = [
   {
     img: "/image/roadmap/roadmap_img_01.png",
-    time: "2022 2Q-3Q",
+    time: "2022 <strong>2Q-3Q</strong>",
     content: [
       "메인캐릭터 3D Esset -",
       "주요 등장인물 캐릭터 PFP 민팅 -",
@@ -115,29 +115,28 @@ export const LineData = [
   },
   {
     img: "/image/roadmap/roadmap_img_02.png",
-    time: "2022 3Q-4Q",
+    time: "2022 <strong>3Q-4Q</strong>",
     content: [
-      "메인캐릭터 3D Esset -",
-      "주요 등장인물 캐릭터 PFP 민팅 -",
-      "콜라보 캐릭터 PFP 민팅 -",
+      "- 3D 랜드 / 빌딩 에셋 민팅",
+      "- 홀더 전용 커뮤니티 서비스 출시",
+      "- 홀더 보상전용 NFT 월렛 출시",
     ],
   },
   {
     img: "/image/roadmap/roadmap_img_03.png",
-    time: "2023 1Q-2Q",
+    time: "2023 <strong>1Q-2Q</strong>",
     content: [
-      "메인캐릭터 3D Esset -",
-      "주요 등장인물 캐릭터 PFP 민팅 -",
-      "콜라보 캐릭터 PFP 민팅 -",
+      "메타액슬 P2E 베타 런칭 -",
+      "메타액슬 메타버스 개발 착수 -",
+      "NFT 아티스트 네트워크 구축 - ",
     ],
   },
   {
     img: "/image/roadmap/roadmap_img_04.png",
-    time: "2023 3Q-4Q",
+    time: "2023 <strong>3Q-4Q</strong>",
     content: [
-      "메인캐릭터 3D Esset -",
-      "주요 등장인물 캐릭터 PFP 민팅 -",
-      "콜라보 캐릭터 PFP 민팅 -",
+      "- 메타버스 프로토타입 쇼케이스",
+      "- 메타액슬 캐릭터 제휴 사업 확장",
     ],
   },
 ];

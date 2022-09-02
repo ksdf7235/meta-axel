@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import media from "../../../lib/media";
+import sanitizeHTML from "sanitize-html";
 
 type LineProps = {
   number: number;
   img?: string;
   content?: string[];
-  time?: string;
+  time: string;
 };
 
 const RoadmapTemplate: React.FC<LineProps> = ({
@@ -15,11 +16,18 @@ const RoadmapTemplate: React.FC<LineProps> = ({
   time,
 }) => {
   const Lr = number % 2 === 0 ? "right" : "left";
+  const CleanHtml = sanitizeHTML(time, {
+    allowedTags: ["br", "strong"],
+  });
   return number % 2 === 0 ? (
     <>
       <LineContentlayout>
-        <LineTitle>
-          <h1>{time}</h1>
+        <LineTitle number={number}>
+          <h1
+            dangerouslySetInnerHTML={{
+              __html: CleanHtml,
+            }}
+          ></h1>
         </LineTitle>
         <LineBoxLayout>
           <LineContentDes Lr={Lr}>
@@ -36,8 +44,12 @@ const RoadmapTemplate: React.FC<LineProps> = ({
   ) : (
     <>
       <LineContentlayout>
-        <LineTitle>
-          <h1>{time}</h1>
+        <LineTitle number={number}>
+          <h1
+            dangerouslySetInnerHTML={{
+              __html: CleanHtml,
+            }}
+          ></h1>
         </LineTitle>
         <LineBoxLayout>
           <LineContentDes Lr={Lr}>
@@ -66,17 +78,29 @@ const LineContentlayout = styled.div<{ img?: string }>`
   background-repeat: no-repeat;
 
   ${media.desktop} {
-    display: flex;
+    display: ${(props) => (props.img ? "none" : "flex")};
   }
 `;
 
-const LineTitle = styled.div`
+const LineTitle = styled.div<{ number: number }>`
   width: 100%;
   display: flex;
   height: 20%;
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  ${media.desktop} {
+    justify-content: ${(props) =>
+      props.number % 2 === 0 ? "flex-end" : "flex-start"};
+
+    h1 {
+      strong {
+        color: #46ffff;
+        font-weight: 600;
+      }
+    }
+  }
 `;
 const LineBoxLayout = styled.div`
   width: 100%;

@@ -1,29 +1,30 @@
+import RoadMap from "../component/Home/RoadMap";
 export const selectLang = (Lang: boolean) => {
   return Lang
     ? {
         //헤더
         HeaderLang: [
-          "BUILDING NFT",
-          "LANDING NFT",
-          "CHARACTER NFT",
+          "BUILDING",
+          "LAND",
+          "CHARACTER",
           "RARITY",
           "TEAM",
           "PARTNERS",
           "ROADMAP",
         ],
         Description: {
-          mainTitle: `META AXEL is an <strong> ICONIC  WEB3</strong><br></br> BRAND   made by digital <br></br> artist community.`,
+          mainTitle: `META-AXEL is an <strong> ICONIC  WEB3</strong><br></br> BRAND   made by digital <br></br> artist community.`,
           mainBoxTitle: [
-            "META AXEL NFTs are used as keys to the META AXEL ARK membership (‘ARK’). The ARK is the private community of writers, artists, musicians, skateboarders, surfers, dancers, programmers, investors, all kinds of dreamers and misfits. Human civilization has reached to the Singularity point. Are humans worthy to the eyes of the hyper intelligent conscious A.I.? Or are we just threats and risks to the planet?Mother (GAIA), the god-like AI from the earth 1155, wants to have you onboard to the ARK, if you seek for the true humanity opposed to hate, discriminations, all kinds of self-centered ego and stupid ‘I’m better than you’ sh*t.",
-            "We want to grow the power for the passengers of the ARK while having a good time, experimenting freely, and collaborating with each other. Money, influence, whatever the power could be, to prepare ourselves for the evolution of the humanity on the way. How far can we go with META AXEL? One thing for sure is, the journey will be crazy, silly and fun. All IPs belong to META AXEL.inc and its affiliates but holders will have commercial usage rights (only while holding our NFTs) to use them commercially with their NFT numbers(i.e,#1110) but cannot use META AXEL logo or name without our permission. If you make more than $100k or equivalent crypto out of your business usage of META AXEL NFTs, we ask you to donate 5% to the community wallet. This will be used to raise the brand value for everyone via votes. *This license agreement can be changed so make sure you join our newsletter/ discord.",
+            "META-AXEL NFTs are used as keys to the META-AXEL ARK membership (‘ARK’). The ARK is the private community of writers, artists, musicians, skateboarders, surfers, dancers, programmers, investors, all kinds of dreamers and misfits. Human civilization has reached to the Singularity point. Are humans worthy to the eyes of the hyper intelligent conscious A.I.? Or are we just threats and risks to the planet?Mother (GAIA), the god-like AI from the earth 1155, wants to have you onboard to the ARK, if you seek for the true humanity opposed to hate, discriminations, all kinds of self-centered ego and stupid ‘I’m better than you’ sh*t.",
+            "We want to grow the power for the passengers of the ARK while having a good time, experimenting freely, and collaborating with each other. Money, influence, whatever the power could be, to prepare ourselves for the evolution of the humanity on the way. How far can we go with META-AXEL? One thing for sure is, the journey will be crazy, silly and fun. All IPs belong to META-AXEL.inc and its affiliates but holders will have commercial usage rights (only while holding our NFTs) to use them commercially with their NFT numbers(i.e,#1110) but cannot use META-AXEL logo or name without our permission. If you make more than $100k or equivalent crypto out of your business usage of META-AXEL NFTs, we ask you to donate 5% to the community wallet. This will be used to raise the brand value for everyone via votes. *This license agreement can be changed so make sure you join our newsletter/ discord.",
           ],
           JoinTitle: [
-            "MetaExcel supports NFT artists.",
+            "MetaAxel supports NFT artists.",
             "Join the NFT Artists Guild today",
           ],
         },
         Ark: {
-          mainTitle: "META AXEL ARK",
+          mainTitle: "META-AXEL ARK",
           mainBoxTitle: ["private lounge for META-AXEL NFT holders"],
         },
         Build: {
@@ -83,13 +84,37 @@ export const selectLang = (Lang: boolean) => {
           mainTitle: "ATTRIBUTE",
           mainBoxTitle: "",
         },
+        RoadMap: {
+          mainTitle: "ROADMAP",
+          ContainerContent: [
+            [
+              "Main Character 3D Asset - ",
+              "Main character PFP Minting - ",
+              "Collaboration PFP Minting -",
+            ],
+            [
+              "- 3D Land / Building Asset ",
+              "- Launch NFT Holders’ Service",
+              "- Moble app for holder’s reward",
+            ],
+            [
+              "Lauch P2E beta service -",
+              "Build NFT Artist Network =",
+              "Metaverse Showcases - ",
+            ],
+            [
+              "- Meta-Axel Artwork Exvithions",
+              "- Partnership Business Expansion",
+            ],
+          ],
+        },
       }
     : {
         //Header
         HeaderLang: [
-          "BUILDING NFT",
-          "LANDING NFT",
-          "CHARACTER NFT",
+          "BUILDING",
+          "LAND",
+          "CHARACTER",
           "RARITY",
           "TEAM",
           "PARTNERS",
@@ -100,7 +125,7 @@ export const selectLang = (Lang: boolean) => {
             아이코닉한 <br></br>
             <strong>WEB3 브랜드</strong> 입니다.`,
           mainBoxTitle: [
-            " 메타엑셀 NFT 소유자는 아티스트, 뮤지션, 스케이트 보더, surfers, 댄서, 작가. 개발자, 투자자, 사업가 등 꿈꾸는 이들이 모인 프라이빗 라운지인 메타엑셀 아크 (META AXEL ARK) 에 입장할 수 있습니다. 인류문명은 AI가 의식을 가지게 되는 특이점 (Singularity)에 도달했습니다. AI의 눈에 비친 우리는 과연 이 지구에서 가치있는 존재일까요? 아니면 위험한 존재일까요? 메타엑셀의 1155 지구에 있는 초월적 AI, Mother는 차별과 혐오, 내가 옳고 우월하다는 에고를 버리고, 인류 의식의 진화를 꿈꾸는 당신같은 사람들을 ARK (방주)에 태우고 싶어합니다.",
+            " 메타엑셀 NFT 소유자는 아티스트, 뮤지션, 스케이트 보더, surfers, 댄서, 작가. 개발자, 투자자, 사업가 등 꿈꾸는 이들이 모인 프라이빗 라운지인 메타엑셀 아크 (META-AXEL ARK) 에 입장할 수 있습니다. 인류문명은 AI가 의식을 가지게 되는 특이점 (Singularity)에 도달했습니다. AI의 눈에 비친 우리는 과연 이 지구에서 가치있는 존재일까요? 아니면 위험한 존재일까요? 메타엑셀의 1155 지구에 있는 초월적 AI, Mother는 차별과 혐오, 내가 옳고 우월하다는 에고를 버리고, 인류 의식의 진화를 꿈꾸는 당신같은 사람들을 ARK (방주)에 태우고 싶어합니다.",
             "우리는 ARK 탑승객들이 자유롭게 놀고, 실험하고, 서로 도우면서 세상을 바꿀 수 있는 힘을 모으고자 합니다. 그 힘이 돈이든지 영향력이든지 말이에요. 당신과 우리는 메타엑셀을 통해 어디까지 갈 수 있을까요? 확실한 것은, 우리의 여정이 너무나 재미있을 거에요. IP 관리를 위하여 모든 IP는 메타엑셀과 파트너사에게 귀속됩니다. NFT 홀더들은 보유기간 동안 자신의 NFT를 상업적으로 활용 가능합니다. 다만 사전 협의 없이 메타엑셀의 로고나 이름을 사용할 수 없으며, 자신의 NFT 번호(#1110)를 명시하여 사용해야합니다. 메타엑셀 NFT를 통하여 $100k (1억 2천만원) 이상의 매출이 났을 경우, 5%를 커뮤니티 월렛에 기부하기를 요청합니다. 이 금액은 투표를 통하여 브랜드 가치를 높이는 활동에 사용됩니다.",
           ],
           JoinTitle: [
@@ -109,7 +134,7 @@ export const selectLang = (Lang: boolean) => {
           ],
         },
         Ark: {
-          mainTitle: "META AXEL ARK",
+          mainTitle: "META-AXEL ARK",
           mainBoxTitle: ["메타엑셀 nft홀더 전용 프라이빗 라운지"],
           JoinTitle: [],
         },
@@ -169,6 +194,30 @@ export const selectLang = (Lang: boolean) => {
         Attr: {
           mainTitle: "ATTRIBUTE",
           mainBoxTitle: "",
+        },
+        RoadMap: {
+          mainTitle: "ROADMAP",
+          ContainerContent: [
+            [
+              "메인캐릭터 3D Esset -",
+              "주요 등장인물 캐릭터 PFP 민팅 -",
+              "콜라보 캐릭터 PFP 민팅 -",
+            ],
+            [
+              "- 3D 랜드 / 빌딩 에셋 민팅",
+              "- 홀더 전용 커뮤니티 서비스 출시",
+              "- 홀더 보상전용 NFT 월렛 출시",
+            ],
+            [
+              "메타액슬 P2E 베타 런칭 -",
+              "메타액슬 메타버스 개발 착수 -",
+              "NFT 아티스트 네트워크 구축 - ",
+            ],
+            [
+              "- 메타버스 프로토타입 쇼케이스",
+              "- 메타액슬 캐릭터 제휴 사업 확장",
+            ],
+          ],
         },
       };
 };

@@ -170,10 +170,12 @@ const BuildTitle = styled.div`
   height: 10%;
   margin-left: 1rem;
   min-height: 50px;
+  padding-bottom: 1rem;
   margin-bottom: 2rem;
   font-weight: 700;
   font-size: 30px;
   ${media.desktop} {
+    padding-bottom: 0px;
     display: none;
     width: 100%;
     background-size: cover;
@@ -187,7 +189,6 @@ const BuildTitledesk = styled.div`
   height: 10%;
   margin-left: 1rem;
   min-height: 50px;
-  margin-bottom: 2rem;
   font-weight: 700;
   font-size: 30px;
   ${media.desktop} {

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import media from "../../lib/media";
 import Footer from "../Footer/Footer";
+import Guide from "../GuideBar/Guide";
 import Header from "../Header/Header";
 
 type LayoutProps = {
@@ -16,6 +17,7 @@ const Content = styled.main`
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
+      <Guide />
       <Content>{children}</Content>
       <Footer />
     </>
