@@ -6,6 +6,7 @@ import media from "../../lib/media";
 import Animation from "./Animation/Animation";
 import Scri from "./Animation/scri";
 import Header from "../Header/Header";
+import Chat from "./Chat/Chat";
 
 const Main: React.FC = () => {
   const [Lang, setLang] = useRecoilState(LangState);
@@ -17,6 +18,7 @@ const Main: React.FC = () => {
       <Header />
       <MainMedia Lang={Lang}>
         <Scri />
+        <Chat />
       </MainMedia>
       <MainContent>
         <h1>META-AXEL PROJECT</h1>
@@ -97,6 +99,7 @@ const MainMedia = styled.div<{ Lang: boolean }>`
   ${media.small} {
     background-image: none !important;
     width: 100%;
+    flex-direction: column;
   }
   ${media.desktop} {
     display: flex;

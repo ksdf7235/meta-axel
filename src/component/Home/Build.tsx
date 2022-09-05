@@ -169,11 +169,11 @@ const BuildTitle = styled.div`
   width: 90%;
   height: 10%;
   margin-left: 1rem;
-  min-height: 50px;
-  padding-bottom: 1rem;
+  min-height: 100px;
+  padding-bottom: 2rem;
   margin-bottom: 2rem;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 40px;
   ${media.desktop} {
     padding-bottom: 0px;
     display: none;
@@ -186,11 +186,11 @@ const BuildTitle = styled.div`
 const BuildTitledesk = styled.div`
   display: none;
   width: 90%;
-  height: 10%;
+  height: 20%;
   margin-left: 1rem;
   min-height: 50px;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 40px;
   ${media.desktop} {
     display: block;
     width: 100%;
