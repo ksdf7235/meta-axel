@@ -39,9 +39,7 @@ export const Companies = [
   {
     img: "/image/company/aas_mark.png",
   },
-  {
-    img: "/image/company/tc_mark.png",
-  },
+
   {
     img: "/image/company/lbio_mark.png",
   },

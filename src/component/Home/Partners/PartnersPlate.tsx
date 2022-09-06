@@ -1,19 +1,23 @@
+import { useRecoilState } from "recoil";
 import styled from "styled-components";
+import { LangState } from "../../../atoms";
 import media from "../../../lib/media";
 
 type PartnersProps = {
   img?: string;
   name?: string;
   position?: string;
+  kr?: string;
 };
 
-const PartnerPlate: React.FC<PartnersProps> = ({ img, name, position }) => {
+const PartnerPlate: React.FC<PartnersProps> = ({ img, name, position, kr }) => {
+  const [Lang, setLang] = useRecoilState(LangState);
   return (
     <PartnerPlateLayout>
       <PartnerImg img={img} />
       <PartnerIntro>
         <PartnerName>{name}</PartnerName>
-        <PartnerPosition>{position}</PartnerPosition>
+        <PartnerPosition>{Lang ? position : kr}</PartnerPosition>
       </PartnerIntro>
     </PartnerPlateLayout>
   );
@@ -28,8 +32,8 @@ const PartnerPlateLayout = styled.div`
 
 const PartnerImg = styled.div<{ img?: string }>`
   //0804 수정
-  height: 100px;
-  width: 100px;
+  height: 120px;
+  width: 120px;
 
   background-image: ${(props) => `url(${props.img})`};
   background-position: center center;

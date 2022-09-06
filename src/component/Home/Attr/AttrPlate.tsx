@@ -1,3 +1,4 @@
+import Slider from "react-slick";
 import styled from "styled-components";
 import { AttrData } from "../../../Data/dummy";
 import media from "../../../lib/media";
@@ -22,8 +23,25 @@ type AttrProps = {
 };
 
 const AttrPlate: React.FC = () => {
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    prevArrow: <></>,
+    nextArrow: <></>,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
-    <>
+    <Slider {...settings}>
       {AttrData.map(({ img, attribute }, num) => {
         const title: string[] = [];
         const keys: string[] = [];
@@ -47,9 +65,26 @@ const AttrPlate: React.FC = () => {
           </AttrPlateLayout>
         );
       })}
-    </>
+    </Slider>
   );
 };
+
+const LeftArrow = styled.div`
+  z-index: 100;
+  background: no-repeat url("/image/common/slider_arrow_left.png");
+  background-size: contain;
+  width: 50px;
+  height: 60px;
+`;
+const RightArrow = styled(LeftArrow)`
+  position: absolute;
+  top: 30vh;
+  right: 10%;
+  background: no-repeat url("/image/common/slider_arrow_right.png");
+  :hover {
+    background: no-repeat url("/image/common/slider_arrow_right.png");
+  }
+`;
 
 const AttrPlateLayout = styled.div`
   background: linear-gradient(
@@ -59,22 +94,27 @@ const AttrPlateLayout = styled.div`
     rgba(210, 53, 64, 0.2) 100%
   );
   border: 1px solid rgba(210, 53, 64, 1);
+  padding: 10px;
   display: flex;
+  width: 100%;
+  height: auto;
+  min-width: 300px;
+  min-height: 550px;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: column;
-  ${media.small} {
+  /* ${media.small} {
     :nth-child(n + 2) {
       display: none;
     }
-  }
+  } */
 `;
 
 const AttrImg = styled.div<{ img?: string }>`
   width: 70%;
   height: 30%;
-  margin: 1rem 0px;
-  min-height: 100px;
+  margin: 1rem auto;
+  min-height: 200px;
   background-image: ${(props) => `url(${props.img})`};
   background-position: center;
   background-repeat: no-repeat;
@@ -103,6 +143,7 @@ const Attr = styled.div`
   width: 90%;
   min-height: 200px;
   display: grid;
+  margin: 0 auto;
   gap: 0.2rem;
   align-items: center;
   justify-content: center;

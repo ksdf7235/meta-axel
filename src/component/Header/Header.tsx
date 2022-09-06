@@ -75,7 +75,7 @@ const MetaLogo = styled.img`
   width: 100px;
   height: 120px;
   bottom: 5rem;
-  left: 50%;
+  left: 47%;
   z-index: 1001;
 `;
 

@@ -16,12 +16,20 @@ const Attribute: React.FC = () => {
       <AttrContainer>
         <TitleH1>{attrLang.mainTitle}</TitleH1>
       </AttrContainer>
-      <AttrGrid>
+      {/* <AttrGrid> */}
+      <SlideLayout>
         <AttrPlate />
-      </AttrGrid>
+      </SlideLayout>
     </AttrLayout>
   );
 };
+const SlideLayout = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+`;
+const SaleSlider = styled(Slider)``;
 
 const AttrGrid = styled.div`
   margin-top: 1rem;

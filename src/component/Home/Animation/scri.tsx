@@ -39,6 +39,9 @@ const Ani = styled(Spritesheet)`
     position: relative;
     top: 10%;
   }
+  ${media.small} {
+    width: 300px;
+  }
 
   :hover {
     .react-responsive-spritesheet-container {

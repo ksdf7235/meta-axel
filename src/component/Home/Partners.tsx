@@ -15,12 +15,13 @@ function Partners() {
           <NxdfBanner></NxdfBanner>
           <Why>&</Why>
           <PartnerGrid>
-            {AllPartners.map(({ img, name, position }, i) => (
+            {AllPartners.map(({ img, name, position, kr }, i) => (
               <PartnerPlate
                 key={`p${i}`}
                 img={img}
                 name={name}
                 position={position}
+                kr={kr}
               />
             ))}
           </PartnerGrid>
@@ -65,7 +66,7 @@ const PartnerGrid = styled.div`
   display: grid;
   width: 80%;
   margin-top: 2rem;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(auto, 1fr);
   min-height: 400px;
   justify-content: space-between;

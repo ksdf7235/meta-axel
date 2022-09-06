@@ -102,7 +102,7 @@ function Navigation() {
         </Link>
       </a>
       <a onClick={ChangeLang}>
-        <li>{Lang ? "EN" : "KR"}</li>
+        <li>{Lang ? "KR" : "EN"}</li>
       </a>
     </>
   );

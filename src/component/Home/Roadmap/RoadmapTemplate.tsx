@@ -69,7 +69,6 @@ const RoadmapTemplate: React.FC<LineProps> = ({
 const LineContentlayout = styled.div<{ img?: string }>`
   height: 100%;
   min-height: 300px;
-  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -89,7 +88,7 @@ const LineTitle = styled.div<{ number: number }>`
   align-items: center;
   justify-content: center;
   text-align: center;
-  
+
   ${media.desktop} {
     justify-content: ${(props) =>
       props.number % 2 === 0 ? "flex-end" : "flex-start"};

@@ -108,7 +108,7 @@ export const LineData = [
     img: "/image/roadmap/roadmap_img_01.png",
     time: "2022 <strong>2Q-3Q</strong>",
     content: [
-      "메인캐릭터 3D Esset -",
+      "메인캐릭터 3D Asset -",
       "주요 등장인물 캐릭터 PFP 민팅 -",
       "콜라보 캐릭터 PFP 민팅 -",
     ],

@@ -57,14 +57,15 @@ const Line = styled.div<{ Lang: boolean }>`
   margin-bottom: 5rem;
   background-image: ${(props) =>
     props.Lang
-      ? `url("image/roadmap/roadmap_img_en2.png")`
+      ? `url("image/roadmap/roadmap_img_line.png")`
       : `url("image/roadmap/roadmap_img_ch.png")`};
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  display: flex;
   align-items: center;
   justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 
   ${media.desktop} {
     display: grid;

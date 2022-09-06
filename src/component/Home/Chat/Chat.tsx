@@ -78,6 +78,10 @@ const ChatImg = styled.img`
   width: 400px;
   height: 250px;
   bottom: 0.5rem;
+  ${media.small} {
+    width: 350px;
+    left: -4vw;
+  }
 `;
 const ChatContent = styled.div`
   width: 90%;
@@ -125,6 +129,7 @@ const ChatLayout = styled.div`
   }
   ${media.small} {
     position: static;
+    width: 350px;
   }
 `;
 
