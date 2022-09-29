@@ -40,7 +40,7 @@ const Sale: React.FC = () => {
             ))}
           </SaleSlider>
           <SliderContent>
-            <Timer name='meta' date='October 1, 2022 23:00:00 UTC' />
+            <Timer name='meta' date='October 1, 2022 14:00:00 UTC' />
           </SliderContent>
           <SaleSlider {...settings}>
             {CharacterData2.map(({ img }, i) => (

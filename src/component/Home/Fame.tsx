@@ -36,7 +36,7 @@ const Fame: React.FC = () => {
       </SaleContainer>
       <SlideLayout>
         <SliderContent>
-          <Timer name='fame' date='October 15, 2022 23:00:00 UTC' />
+          <Timer name='fame' date='October 15, 2022 14:00:00 UTC' />
         </SliderContent>
         <SaleSlider {...settings}>
           {CharacterData3.map(({ img }, i) => (
