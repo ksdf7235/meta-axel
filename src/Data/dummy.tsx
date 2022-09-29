@@ -38,6 +38,26 @@ export const CharacterData2 = [
     img: "/image/character/cha_img_12.png",
   },
 ];
+export const CharacterData3 = [
+  {
+    img: "/image/character/cha_img_101.png",
+  },
+  {
+    img: "/image/character/cha_img_102.png",
+  },
+  {
+    img: "/image/character/cha_img_103.png",
+  },
+  {
+    img: "/image/character/cha_img_104.png",
+  },
+  {
+    img: "/image/character/cha_img_105.png",
+  },
+  {
+    img: "/image/character/cha_img_106.png",
+  },
+];
 export const BuildData = [
   {
     img: [

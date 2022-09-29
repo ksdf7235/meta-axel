@@ -75,6 +75,7 @@ const LineContentlayout = styled.div<{ img?: string }>`
   background-image: ${(props) => `url(${props.img})`};
   background-position: center;
   background-repeat: no-repeat;
+  display: none;
 
   ${media.desktop} {
     display: ${(props) => (props.img ? "none" : "flex")};

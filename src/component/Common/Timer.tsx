@@ -11,6 +11,11 @@ interface TimerProps {
   completed: boolean;
 }
 
+interface DateProps {
+  date: string;
+  name: string;
+}
+
 const Content = styled.main`
   margin: 0 auto;
   max-width: 1920px;
@@ -33,11 +38,15 @@ const EndTimer = styled.div`
   cursor: pointer;
 `;
 
-const Timer: React.FC = () => {
-  let drawtime = new Date("September 31, 2022 00:00:00 UTC").getTime();
+const Timer: React.FC<DateProps> = ({ date, name }) => {
+  console.log(date);
+  let drawtime = new Date(date).getTime();
   let timenow = Date.now();
   const GoMint = () => {
-    window.location.href = "https://discord.gg/UxAYWbkXyS";
+    window.location.href = "https://mint-meta.web.app/ ";
+  };
+  const GoFame = () => {
+    window.location.href = "";
   };
   const renderer = ({
     days,
@@ -47,8 +56,13 @@ const Timer: React.FC = () => {
     completed,
   }: TimerProps) => {
     if (completed) {
-      // Render a completed state
-      return <EndTimer onClick={GoMint}>Mint now</EndTimer>;
+      if (name === "meta") {
+        // Render a completed state
+        return <EndTimer onClick={GoMint}>Mint now</EndTimer>;
+      } else if (name === "fame") {
+        // Render a completed state
+        return <EndTimer onClick={GoFame}>Mint now</EndTimer>;
+      }
     } else {
       // Render a countdown
       return (

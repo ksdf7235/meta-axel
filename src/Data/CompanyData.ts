@@ -28,9 +28,6 @@ export const Companies = [
   },
 
   {
-    img: "/image/company/solsea_mark.png",
-  },
-  {
     img: "/image/company/zebec_mark.png",
   },
   {
@@ -39,9 +36,11 @@ export const Companies = [
   {
     img: "/image/company/aas_mark.png",
   },
-
   {
-    img: "/image/company/lbio_mark.png",
+    img: "/image/company/lbio_mark2.png",
+  },
+  {
+    img: "/image/company/dawa_logo.png",
   },
   {
     img: "/image/company/169_mark.png",

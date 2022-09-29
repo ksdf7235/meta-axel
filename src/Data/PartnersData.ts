@@ -105,8 +105,8 @@ export const AllPartners = [
   {
     img: "/image/partners/business-pic04.png",
     name: "Jihoon Jeong",
-    kr: "전략고문",
-    position: "Strategic Advisor",
+    kr: "최고 전략 책임자",
+    position: " Chief Stratgy Officer ",
   },
 
   {
@@ -145,12 +145,7 @@ export const AllPartners = [
     position: "3D graphic artist",
     kr: "아트워크 제작팀",
   },
-  {
-    img: "/image/partners/development-pic08.png",
-    name: "Mina Kim",
-    position: "Digital Graphic Artist",
-    kr: "아트워크 제작팀",
-  },
+  
   {
     img: "/image/partners/development-pic09.png",
     name: "D. H. Kim",
@@ -176,10 +171,16 @@ export const AllPartners = [
     kr: "마케팅 최고 책임자",
     position: "Chief Marketing Officer",
   },
-  // {
-  //   img: "/image/partners/business-pic20.png",
-  //   name: "Allie Park",
-  //   kr: "최고 전략 책임자",
-  //   position: "Chief Strategy Officer",
-  // },
+  {
+    img: "/image/partners/business-pic20.png",
+    name: "Allie Park",
+    kr: "커뮤니티 리더",
+    position: "Community Leader",
+  },
+  {
+    img: "/image/partners/business-pic05.png",
+    name: "Eddie KS Choi",
+    kr: "기술 사업화 고문",
+    position: "Advisor",
+  },
 ];

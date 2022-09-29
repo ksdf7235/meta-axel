@@ -57,7 +57,7 @@ const Line = styled.div<{ Lang: boolean }>`
   margin-bottom: 5rem;
   background-image: ${(props) =>
     props.Lang
-      ? `url("image/roadmap/roadmap_img_line.png")`
+      ? `url("image/roadmap/roadmap_img_en.png")`
       : `url("image/roadmap/roadmap_img_ch.png")`};
   background-repeat: no-repeat;
   background-position: center;

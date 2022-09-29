@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import { useRecoilState } from "recoil";
 import media from "../../lib/media";
 import { CommonLayout } from "../Common/Layout";
 import Slider from "react-slick";
-import { CharacterData, CharacterData2 } from "../../Data/dummy";
+import { CharacterData3 } from "../../Data/dummy";
 import Timer from "../Common/Timer";
 
-const Sale: React.FC = () => {
+const Fame: React.FC = () => {
   const settings = {
     infinite: true,
     speed: 500,
@@ -29,43 +28,41 @@ const Sale: React.FC = () => {
   return (
     <SaleLayout>
       <SaleContainer>
-        <h1>THE FISRT NFT SALE 2022.09</h1>
-        <span>META-AXEL'S FIRST COLLECTION : 10,000 NFTS</span>
+        <LOGODIV>
+          <img src={"image/fame/famexmeta.png"} />
+        </LOGODIV>
+        <span>META AXEL x FAME</span>
+        <h1>BURNT PINK SQUAD DESIGNER EDITION</h1>
       </SaleContainer>
-      <SaleSlideLayout>
-        <SlideLayout>
-          <SaleSlider {...settings}>
-            {CharacterData.map(({ img }, i) => (
-              <Box key={i} img={img}></Box>
-            ))}
-          </SaleSlider>
-          <SliderContent>
-            <Timer name='meta' date='October 1, 2022 23:00:00 UTC' />
-          </SliderContent>
-          <SaleSlider {...settings}>
-            {CharacterData2.map(({ img }, i) => (
-              <Box key={i} img={img}></Box>
-            ))}
-          </SaleSlider>
-          <Sliderbottom />
-        </SlideLayout>
-      </SaleSlideLayout>
+      <SlideLayout>
+        <SliderContent>
+          <Timer name='fame' date='October 15, 2022 23:00:00 UTC' />
+        </SliderContent>
+        <SaleSlider {...settings}>
+          {CharacterData3.map(({ img }, i) => (
+            <Box key={i} img={img}></Box>
+          ))}
+        </SaleSlider>
+      </SlideLayout>
     </SaleLayout>
   );
 };
 
 const SaleSlider = styled(Slider)``;
 
+const LOGODIV = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+`;
+
 const SaleContainer = styled.div`
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   text-align: center;
   h1 {
     font-size: 40px;
     margin-bottom: 3rem;
-  }
-
-  span {
-    color: gray;
   }
 `;
 const Sliderbottom = styled.div`
@@ -91,10 +88,16 @@ const SliderContent = styled.div`
   background-position: center center;
   background-repeat: no-repeat;
   background-size: fill;
+  margin-bottom: 2rem;
 `;
 
 const SaleSlideLayout = styled.div`
   width: 100%;
+  min-height: 600px;
+  background-image: url("image/fame/image.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -130,4 +133,4 @@ const SaleLayout = styled(CommonLayout)`
   justify-content: center;
   align-items: center;
 `;
-export default Sale;
+export default Fame;
