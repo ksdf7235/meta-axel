@@ -103,6 +103,12 @@ export const AllPartners = [
     kr: "블록체인 개발팀",
   },
   {
+    img: "/image/partners/development-pic11.png",
+    kr: "블록체인 개발팀",
+    name: "Rieser Stern",
+    position: "Blockchain Developer",
+  },
+  {
     img: "/image/partners/business-pic04.png",
     name: "Jihoon Jeong",
     kr: "최고 전략 책임자",
@@ -183,4 +189,5 @@ export const AllPartners = [
     kr: "기술 사업화 고문",
     position: "Advisor",
   },
+  
 ];

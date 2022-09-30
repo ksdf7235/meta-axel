@@ -29,8 +29,9 @@ const Sale: React.FC = () => {
   return (
     <SaleLayout>
       <SaleContainer>
-        <h1>THE FISRT NFT SALE 2022.09</h1>
-        <span>META-AXEL'S FIRST COLLECTION : 10,000 NFTS</span>
+        <h1>GRAND OPENING OF THE BURNT PINK SQUAD 2022. 10</h1>
+        <span>Burnt Pink Squad Origin : 3,000 NFTs
+</span>
       </SaleContainer>
       <SaleSlideLayout>
         <SlideLayout>

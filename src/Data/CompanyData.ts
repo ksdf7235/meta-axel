@@ -18,6 +18,9 @@ export const Companies = [
     img: "/image/company/fame_mark.png",
   },
   {
+    img: "/image/company/fsn_mark.png",
+  },
+  {
     img: "/image/company/seven_mark.png",
   },
   {
