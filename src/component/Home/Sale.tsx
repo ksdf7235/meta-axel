@@ -30,8 +30,7 @@ const Sale: React.FC = () => {
     <SaleLayout>
       <SaleContainer>
         <h1>GRAND OPENING OF THE BURNT PINK SQUAD 2022. 10</h1>
-        <span>Burnt Pink Squad Origin : 3,000 NFTs
-</span>
+        <span>Burnt Pink Squad Origin : 3,000 NFTs</span>
       </SaleContainer>
       <SaleSlideLayout>
         <SlideLayout>

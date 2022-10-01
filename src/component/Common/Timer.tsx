@@ -43,7 +43,7 @@ const Timer: React.FC<DateProps> = ({ date, name }) => {
   let drawtime = new Date(date).getTime();
   let timenow = Date.now();
   const GoMint = () => {
-    window.location.href = "https://mint-meta.web.app/ ";
+    window.location.href = "https://mint-meta.firebaseapp.com/";
   };
   const GoFame = () => {
     window.location.href = "";
@@ -58,10 +58,10 @@ const Timer: React.FC<DateProps> = ({ date, name }) => {
     if (completed) {
       if (name === "meta") {
         // Render a completed state
-        return <EndTimer onClick={GoMint}>Mint now</EndTimer>;
+        return <EndTimer onClick={GoMint}>L I V E</EndTimer>;
       } else if (name === "fame") {
         // Render a completed state
-        return <EndTimer onClick={GoFame}>Mint now</EndTimer>;
+        return <EndTimer onClick={GoFame}>LIVE</EndTimer>;
       }
     } else {
       // Render a countdown
