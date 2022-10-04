@@ -177,12 +177,12 @@ export const AllPartners = [
     kr: "마케팅 최고 책임자",
     position: "Chief Marketing Officer",
   },
-  {
-    img: "/image/partners/business-pic20.png",
-    name: "Allie Park",
-    kr: "커뮤니티 리더",
-    position: "Community Leader",
-  },
+  // {
+  //   img: "/image/partners/business-pic20.png",
+  //   name: "Allie Park",
+  //   kr: "커뮤니티 리더",
+  //   position: "Community Leader",
+  // },
   {
     img: "/image/partners/business-pic05.png",
     name: "Eddie KS Choi",
