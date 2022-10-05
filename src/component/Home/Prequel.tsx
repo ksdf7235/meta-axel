@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import { useRecoilState } from "recoil";
 import media from "../../lib/media";
 import { CommonLayout } from "../Common/Layout";
 import Slider from "react-slick";
-import { CharacterData, CharacterData2 } from "../../Data/dummy";
+import { CharacterData4 } from "../../Data/dummy";
 import Timer from "../Common/Timer";
 
-const Sale: React.FC = () => {
+const Prequel: React.FC = () => {
   const settings = {
     infinite: true,
     speed: 500,
@@ -27,43 +26,44 @@ const Sale: React.FC = () => {
     ],
   };
   return (
-    <SaleLayout>
-      <SaleContainer>
-        <h1>GRAND OPENING OF THE BURNT PINK SQUAD 2022. 10</h1>
-        <span>Burnt Pink Squad Origin : 3,000 NFTs</span>
-      </SaleContainer>
-      <SaleSlideLayout>
-        <SlideLayout>
-          <SaleSlider {...settings}>
-            {CharacterData.map(({ img }, i) => (
-              <Box key={i} img={img}></Box>
-            ))}
-          </SaleSlider>
-          <SliderContent>
-            <Timer name='meta' date='October 15, 2022 14:00:00 UTC' />
-          </SliderContent>
-          <SaleSlider {...settings}>
-            {CharacterData2.map(({ img }, i) => (
-              <Box key={i} img={img}></Box>
-            ))}
-          </SaleSlider>
-          <Sliderbottom />
-        </SlideLayout>
-      </SaleSlideLayout>
-    </SaleLayout>
+    <PrequelLayout>
+      <PrequelContainer>
+        {/* <LOGODIV>
+          <img src={"image/fame/famexmeta.png"} />
+        </LOGODIV> */}
+        <h1>BURNT PINK SQUAD PREQUEL</h1>
+        <span>Burnt Pink Squad Prequel : 1,000 NFTs</span>
+      </PrequelContainer>
+      <SlideLayout>
+        <SliderContent>
+          <Timer name='prequel' date='October 11, 2022 14:00:00 UTC' />
+        </SliderContent>
+        <PrequelSlider {...settings}>
+          {CharacterData4.map(({ img }, i) => (
+            <Box key={i} img={img}></Box>
+          ))}
+        </PrequelSlider>
+      </SlideLayout>
+    </PrequelLayout>
   );
 };
 
-const SaleSlider = styled(Slider)``;
+const PrequelSlider = styled(Slider)``;
 
-const SaleContainer = styled.div`
-  margin-bottom: 5rem;
+const LOGODIV = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+`;
+
+const PrequelContainer = styled.div`
+  margin-bottom: 2rem;
   text-align: center;
   h1 {
     font-size: 40px;
     margin-bottom: 3rem;
   }
-
   span {
     color: gray;
   }
@@ -91,10 +91,16 @@ const SliderContent = styled.div`
   background-position: center center;
   background-repeat: no-repeat;
   background-size: fill;
+  margin-bottom: 2rem;
 `;
 
-const SaleSlideLayout = styled.div`
+const PrequelSlideLayout = styled.div`
   width: 100%;
+  min-height: 600px;
+  background-image: url("image/fame/image.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,11 +129,11 @@ const Box = styled.div<{ img?: string }>`
     min-height: 200px;
   }
 `;
-const SaleLayout = styled(CommonLayout)`
+const PrequelLayout = styled(CommonLayout)`
   margin-top: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
-export default Sale;
+export default Prequel;

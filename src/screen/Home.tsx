@@ -13,6 +13,7 @@ import Rarity from "../component/Home/Rarity";
 import RoadMap from "../component/Home/RoadMap";
 import Sale from "../component/Home/Sale";
 import Fame from "../component/Home/Fame";
+import Prequel from "../component/Home/Prequel";
 import Header from "../component/Header/Header";
 
 function Home() {
@@ -24,6 +25,7 @@ function Home() {
       <Build />
       <Land />
       <Character />
+      <Prequel />
       <Sale />
       <Fame />
       <Rarity />

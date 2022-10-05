@@ -58,6 +58,28 @@ export const CharacterData3 = [
     img: "/image/character/cha_img_106.png",
   },
 ];
+
+export const CharacterData4 = [
+  {
+    img: "/image/character/cha_img_201.png",
+  },
+  {
+    img: "/image/character/cha_img_202.png",
+  },
+  {
+    img: "/image/character/cha_img_203.png",
+  },
+  {
+    img: "/image/character/cha_img_204.png",
+  },
+  {
+    img: "/image/character/cha_img_205.png",
+  },
+  {
+    img: "/image/character/cha_img_206.png",
+  },
+];
+
 export const BuildData = [
   {
     img: [

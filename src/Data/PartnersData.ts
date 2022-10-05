@@ -173,7 +173,7 @@ export const AllPartners = [
 
   {
     img: "/image/partners/business-pic02.png",
-    name: "Manana Baiadze",
+    name: "M. Baiadze",
     kr: "마케팅 최고 책임자",
     position: "Chief Marketing Officer",
   },

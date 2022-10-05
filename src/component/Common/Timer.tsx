@@ -48,6 +48,9 @@ const Timer: React.FC<DateProps> = ({ date, name }) => {
   const GoFame = () => {
     window.location.href = "";
   };
+  const GoPrequel = () => {
+    window.location.href = "";
+  };
   const renderer = ({
     days,
     hours,
@@ -61,7 +64,10 @@ const Timer: React.FC<DateProps> = ({ date, name }) => {
         return <EndTimer onClick={GoMint}>L I V E</EndTimer>;
       } else if (name === "fame") {
         // Render a completed state
-        return <EndTimer onClick={GoFame}>LIVE</EndTimer>;
+        return <EndTimer onClick={GoFame}>L I V E</EndTimer>;
+      } else if (name === "prequel") {
+        // Render a completed state
+        return <EndTimer onClick={GoPrequel}>L I V E</EndTimer>;
       }
     } else {
       // Render a countdown
