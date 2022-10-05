@@ -6,6 +6,7 @@ import { CharacterData3 } from "../../Data/dummy";
 import Timer from "../Common/Timer";
 
 const Fame: React.FC = () => {
+  
   const settings = {
     infinite: true,
     speed: 500,

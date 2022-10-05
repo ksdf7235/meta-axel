@@ -43,13 +43,26 @@ const Timer: React.FC<DateProps> = ({ date, name }) => {
   let drawtime = new Date(date).getTime();
   let timenow = Date.now();
   const GoMint = () => {
-    window.location.href = "https://mint-meta.firebaseapp.com/";
+
+    if(window.innerWidth > 1200){
+      window.location.href = "https://mint-meta.firebaseapp.com/";
+    }else{
+      alert("please connect desktop")
+    }
   };
   const GoFame = () => {
-    window.location.href = "";
+    if(window.innerWidth > 1200){
+      window.location.href = "https://mint-meta.firebaseapp.com/";
+    }else{
+      alert("please connect desktop")
+    }
   };
   const GoPrequel = () => {
-    window.location.href = "";
+    if(window.innerWidth > 1200){
+      window.location.href = "https://mint-meta.firebaseapp.com/";
+    }else{
+      alert("please connect desktop")
+    }
   };
   const renderer = ({
     days,
