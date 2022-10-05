@@ -80,6 +80,27 @@ export const CharacterData4 = [
   },
 ];
 
+export const CharacterData5 = [
+  {
+    img: "/image/character/cha_img_207.png",
+  },
+  {
+    img: "/image/character/cha_img_208.png",
+  },
+  {
+    img: "/image/character/cha_img_209.png",
+  },
+  {
+    img: "/image/character/cha_img_210.png",
+  },
+  {
+    img: "/image/character/cha_img_211.png",
+  },
+  {
+    img: "/image/character/cha_img_212.png",
+  },
+];
+
 export const BuildData = [
   {
     img: [

@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { useRecoilState } from "recoil";
 import media from "../../lib/media";
 import { CommonLayout } from "../Common/Layout";
 import Slider from "react-slick";
-import { CharacterData4 } from "../../Data/dummy";
+import { CharacterData4, CharacterData5 } from "../../Data/dummy";
 import Timer from "../Common/Timer";
 
 const Prequel: React.FC = () => {
@@ -28,42 +29,41 @@ const Prequel: React.FC = () => {
   return (
     <PrequelLayout>
       <PrequelContainer>
-        {/* <LOGODIV>
-          <img src={"image/fame/famexmeta.png"} />
-        </LOGODIV> */}
         <h1>BURNT PINK SQUAD PREQUEL</h1>
         <span>Burnt Pink Squad Prequel : 1,000 NFTs</span>
       </PrequelContainer>
-      <SlideLayout>
-        <SliderContent>
-          <Timer name='prequel' date='October 11, 2022 14:00:00 UTC' />
-        </SliderContent>
-        <PrequelSlider {...settings}>
-          {CharacterData4.map(({ img }, i) => (
-            <Box key={i} img={img}></Box>
-          ))}
-        </PrequelSlider>
-      </SlideLayout>
+      <PrequelSlideLayout>
+        <SlideLayout>
+          <PrequelSlider {...settings}>
+            {CharacterData5.map(({ img }, i) => (
+              <Box key={i} img={img}></Box>
+            ))}
+          </PrequelSlider>
+          <SliderContent>
+            <Timer name='meta' date='October 11, 2022 14:00:00 UTC' />
+          </SliderContent>
+          <PrequelSlider {...settings}>
+            {CharacterData4.map(({ img }, i) => (
+              <Box key={i} img={img}></Box>
+            ))}
+          </PrequelSlider>
+          <Sliderbottom />
+        </SlideLayout>
+      </PrequelSlideLayout>
     </PrequelLayout>
   );
 };
 
 const PrequelSlider = styled(Slider)``;
 
-const LOGODIV = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-`;
-
 const PrequelContainer = styled.div`
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
   text-align: center;
   h1 {
     font-size: 40px;
     margin-bottom: 3rem;
   }
+
   span {
     color: gray;
   }
@@ -91,16 +91,10 @@ const SliderContent = styled.div`
   background-position: center center;
   background-repeat: no-repeat;
   background-size: fill;
-  margin-bottom: 2rem;
 `;
 
 const PrequelSlideLayout = styled.div`
   width: 100%;
-  min-height: 600px;
-  background-image: url("image/fame/image.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   display: flex;
   align-items: center;
   justify-content: center;

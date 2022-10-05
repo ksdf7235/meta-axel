@@ -43,6 +43,7 @@ const Fame: React.FC = () => {
             <Box key={i} img={img}></Box>
           ))}
         </SaleSlider>
+        <Sliderbottom />
       </SlideLayout>
     </SaleLayout>
   );
