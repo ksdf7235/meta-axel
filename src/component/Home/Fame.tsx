@@ -6,7 +6,6 @@ import { CharacterData3 } from "../../Data/dummy";
 import Timer from "../Common/Timer";
 
 const Fame: React.FC = () => {
-  
   const settings = {
     infinite: true,
     speed: 500,
@@ -33,7 +32,7 @@ const Fame: React.FC = () => {
           <img src={"image/fame/famexmeta.png"} />
         </LOGODIV>
         <span>META AXEL x FAME</span>
-        <h1>BURNT PINK SQUAD DESIGNER EDITION</h1>
+        <h1>BURNT PINK SQUAD DESIGNER EDTION 2022. 10</h1>
       </SaleContainer>
       <SlideLayout>
         <SliderContent>

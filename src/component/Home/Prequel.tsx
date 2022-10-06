@@ -29,7 +29,7 @@ const Prequel: React.FC = () => {
   return (
     <PrequelLayout>
       <PrequelContainer>
-        <h1>BURNT PINK SQUAD PREQUEL</h1>
+        <h1>GRAND OPENING OF THE BURNT PINK SQUAD PREQUEL 2022. 10 </h1>
         <span>Burnt Pink Squad Prequel : 1,000 NFTs</span>
       </PrequelContainer>
       <PrequelSlideLayout>
