@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 import React, { useState, useRef, useEffect } from "react";
 import Countdown from "react-countdown";
+import { useRecoilState } from "recoil";
+import { LangState } from "../../atoms";
 
 interface TimerProps {
   days: number;
@@ -39,29 +41,33 @@ const EndTimer = styled.div`
 `;
 
 const Timer: React.FC<DateProps> = ({ date, name }) => {
+  const [Lang, setLang] = useRecoilState(LangState);
   console.log(date);
   let drawtime = new Date(date).getTime();
   let timenow = Date.now();
   const GoMint = () => {
-
-    if(window.innerWidth > 1200){
-      window.location.href = "https://mint-meta.firebaseapp.com/";
-    }else{
-      alert("please connect desktop")
+    if (window.innerWidth > 1200) {
+      window.location.href = `https://mint-meta.firebaseapp.com?lang=${
+        Lang ? "ko" : "en"
+      }`;
+    } else {
+      alert("please connect desktop");
     }
   };
   const GoFame = () => {
-    if(window.innerWidth > 1200){
+    if (window.innerWidth > 1200) {
       window.location.href = "https://mint-meta.firebaseapp.com/";
-    }else{
-      alert("please connect desktop")
+    } else {
+      alert("please connect desktop");
     }
   };
   const GoPrequel = () => {
-    if(window.innerWidth > 1200){
-      window.location.href = "https://mint-meta.firebaseapp.com/";
-    }else{
-      alert("please connect desktop")
+    if (window.innerWidth > 1200) {
+      window.location.href = `https://burnt-prequel.firebaseapp.com/?lang=${
+        Lang ? "ko" : "en"
+      }`;
+    } else {
+      alert("please connect desktop");
     }
   };
   const renderer = ({

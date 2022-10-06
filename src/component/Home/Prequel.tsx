@@ -40,7 +40,7 @@ const Prequel: React.FC = () => {
             ))}
           </PrequelSlider>
           <SliderContent>
-            <Timer name='meta' date='October 11, 2022 14:00:00 UTC' />
+            <Timer name='meta' date='October 1, 2022 14:00:00 UTC' />
           </SliderContent>
           <PrequelSlider {...settings}>
             {CharacterData4.map(({ img }, i) => (
