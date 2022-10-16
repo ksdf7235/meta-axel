@@ -25,7 +25,7 @@ function Home() {
       <Build />
       <Land />
       <Character />
-      <Prequel />
+      {/* <Prequel /> */}
       <Sale />
       <Fame />
       <Rarity />

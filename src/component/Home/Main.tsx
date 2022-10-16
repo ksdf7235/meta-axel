@@ -7,11 +7,14 @@ import Animation from "./Animation/Animation";
 import Scri from "./Animation/scri";
 import Header from "../Header/Header";
 import Chat from "./Chat/Chat";
+import { Link } from "react-scroll";
 
 const Main: React.FC = () => {
   const [Lang, setLang] = useRecoilState(LangState);
   const MintClick = () => {
-    alert("comming soon");
+    window.location.href = `https://premint.metaaxel.online/?lang=${
+      Lang ? "ko" : "en"
+    }`;
   };
   return (
     <MainLayout id='Main'>
@@ -35,7 +38,9 @@ const Main: React.FC = () => {
             </a>
           </MainBtn>
           <MainBtn img={"image/common/btn_pink.png"}>
-            <a onClick={MintClick}>Mint NFT</a>
+            <Link to='sale' spy={true} smooth={true}>
+              <span>Mint NFT</span>
+            </Link>
           </MainBtn>
         </MainBtnContainer>
       </MainContent>

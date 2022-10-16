@@ -63,7 +63,7 @@ const Timer: React.FC<DateProps> = ({ date, name }) => {
   };
   const GoPrequel = () => {
     if (window.innerWidth > 1200) {
-      window.location.href = `https://burnt-prequel.firebaseapp.com/?lang=${
+      window.location.href = `https://premint.metaaxel.online/?lang=${
         Lang ? "ko" : "en"
       }`;
     } else {

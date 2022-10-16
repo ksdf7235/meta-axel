@@ -32,11 +32,11 @@ const Fame: React.FC = () => {
           <img src={"image/fame/famexmeta.png"} />
         </LOGODIV>
         <span>META AXEL x FAME</span>
-        <h1>BURNT PINK SQUAD DESIGNER EDTION 2022. 10</h1>
+        <h1>BURNT PINK SQUAD DESIGNER EDTION 2022. 11</h1>
       </SaleContainer>
       <SlideLayout>
         <SliderContent>
-          <Timer name='fame' date='October 20, 2022 14:00:00 UTC' />
+          <Timer name='fame' date='November 15, 2022 14:00:00 UTC' />
         </SliderContent>
         <SaleSlider {...settings}>
           {CharacterData3.map(({ img }, i) => (
