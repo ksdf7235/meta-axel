@@ -40,6 +40,10 @@ const EndTimer = styled.div`
   cursor: pointer;
 `;
 
+const PrequelEnd = styled(EndTimer)`
+  color: gray;
+`;
+
 const Timer: React.FC<DateProps> = ({ date, name }) => {
   const [Lang, setLang] = useRecoilState(LangState);
   console.log(date);
@@ -61,15 +65,15 @@ const Timer: React.FC<DateProps> = ({ date, name }) => {
       alert("please connect desktop");
     }
   };
-  const GoPrequel = () => {
-    if (window.innerWidth > 1200) {
-      window.location.href = `https://premint.metaaxel.online/?lang=${
-        Lang ? "ko" : "en"
-      }`;
-    } else {
-      alert("please connect desktop");
-    }
-  };
+  // const GoPrequel = () => {
+  //   if (window.innerWidth > 1200) {
+  //     window.location.href = `https://premint.metaaxel.online/?lang=${
+  //       Lang ? "ko" : "en"
+  //     }`;
+  //   } else {
+  //     alert("please connect desktop");
+  //   }
+  // };
   const renderer = ({
     days,
     hours,
@@ -86,7 +90,7 @@ const Timer: React.FC<DateProps> = ({ date, name }) => {
         return <EndTimer onClick={GoFame}>L I V E</EndTimer>;
       } else if (name === "prequel") {
         // Render a completed state
-        return <EndTimer onClick={GoPrequel}>L I V E</EndTimer>;
+        return <PrequelEnd>C L O S E D</PrequelEnd>;
       }
     } else {
       // Render a countdown

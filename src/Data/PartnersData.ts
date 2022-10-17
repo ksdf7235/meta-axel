@@ -111,8 +111,8 @@ export const AllPartners = [
   {
     img: "/image/partners/business-pic04.png",
     name: "Jihoon Jeong",
-    kr: "최고 전략 책임자",
-    position: " Chief Stratgy Officer ",
+    kr: "기술 사업화 고문",
+    position: "Advisor",
   },
 
   {
@@ -151,7 +151,7 @@ export const AllPartners = [
     position: "3D graphic artist",
     kr: "아트워크 제작팀",
   },
-  
+
   {
     img: "/image/partners/development-pic09.png",
     name: "D. H. Kim",
@@ -189,5 +189,4 @@ export const AllPartners = [
     kr: "기술 사업화 고문",
     position: "Advisor",
   },
-  
 ];
