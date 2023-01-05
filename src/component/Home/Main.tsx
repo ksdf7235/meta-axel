@@ -38,7 +38,7 @@ const Main: React.FC = () => {
             </a>
           </MainBtn>
           <MainBtn img={"image/common/btn_pink.png"}>
-            <Link to='sale' spy={true} smooth={true}>
+            <Link to='pre' spy={true} smooth={true}>
               <span>Mint NFT</span>
             </Link>
           </MainBtn>

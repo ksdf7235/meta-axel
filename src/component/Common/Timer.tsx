@@ -39,6 +39,10 @@ const EndTimer = styled.div`
   font-family: "Wallpoet", sans-serif;
   cursor: pointer;
 `;
+const DesignEndTimer = styled(EndTimer)`
+  color: gray;
+  cursor: not-allowed;
+`;
 
 const PrequelEnd = styled(EndTimer)`
   color: gray;
@@ -51,9 +55,7 @@ const Timer: React.FC<DateProps> = ({ date, name }) => {
   let timenow = Date.now();
   const GoMint = () => {
     if (window.innerWidth > 1200) {
-      window.location.href = `https://mint-meta.firebaseapp.com?lang=${
-        Lang ? "ko" : "en"
-      }`;
+      window.location.href = `https://crypto.com/nft/profile/tonythefreedom`;
     } else {
       alert("please connect desktop");
     }
@@ -65,15 +67,13 @@ const Timer: React.FC<DateProps> = ({ date, name }) => {
       alert("please connect desktop");
     }
   };
-  // const GoPrequel = () => {
-  //   if (window.innerWidth > 1200) {
-  //     window.location.href = `https://premint.metaaxel.online/?lang=${
-  //       Lang ? "ko" : "en"
-  //     }`;
-  //   } else {
-  //     alert("please connect desktop");
-  //   }
-  // };
+  const GoPrequel = () => {
+    if (window.innerWidth > 1200) {
+      window.location.href = `https://opensea.io/collection/burnt-pink-squad-prequel`;
+    } else {
+      alert("please connect desktop");
+    }
+  };
   const renderer = ({
     days,
     hours,
@@ -87,10 +87,11 @@ const Timer: React.FC<DateProps> = ({ date, name }) => {
         return <EndTimer onClick={GoMint}>L I V E</EndTimer>;
       } else if (name === "fame") {
         // Render a completed state
-        return <EndTimer onClick={GoFame}>L I V E</EndTimer>;
+        return <DesignEndTimer>T.B.D</DesignEndTimer>;
       } else if (name === "prequel") {
         // Render a completed state
-        return <PrequelEnd>C L O S E D</PrequelEnd>;
+        return <PrequelEnd onClick={GoPrequel}>ENDED</PrequelEnd>;
+        // return <EndTimer onClick={GoPrequel}>ON PRIVATE SALE</EndTimer>;
       }
     } else {
       // Render a countdown

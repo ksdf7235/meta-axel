@@ -27,9 +27,9 @@ const Sale: React.FC = () => {
     ],
   };
   return (
-    <SaleLayout id='sale'>
+    <SaleLayout id="sale">
       <SaleContainer>
-        <h1>GRAND OPENING OF THE BURNT PINK SQUAD 2022. 11</h1>
+        <h1>GRAND OPENING OF THE BURNT PINK SQUAD 2023. 1</h1>
         <span>Burnt Pink Squad Origin : 3,000 NFTs</span>
       </SaleContainer>
       <SaleSlideLayout>
@@ -40,7 +40,7 @@ const Sale: React.FC = () => {
             ))}
           </SaleSlider>
           <SliderContent>
-            <Timer name='meta' date='November 15, 2022 14:00:00 UTC' />
+            <Timer name="meta" date="January 31, 2023 14:00:00 UTC" />
           </SliderContent>
           <SaleSlider {...settings}>
             {CharacterData2.map(({ img }, i) => (
